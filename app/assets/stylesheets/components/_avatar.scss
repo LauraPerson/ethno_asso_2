@@ -1,20 +1,20 @@
+
 .avatar {
-  width: 40px;
   border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid $secondary;
 }
-.avatar-large {
-  width: 56px;
-  border-radius: 50%;
+
+
+.avatar-small {
+  width: 50px;
+  height: 50px;
 }
-.avatar-bordered {
-  width: 40px;
-  border-radius: 50%;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-  border: white 1px solid;
+
+.avatar-big {
+  width: 200px;
+  height: 200px;
 }
-.avatar-square {
-  width: 40px;
-  border-radius: 0px;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-  border: white 1px solid;
-}
+
+
+

@@ -1,10 +1,23 @@
-// Define variables for your color scheme
+$primary: #EA4E25;
+$secondary: #CA9C52;
+$base: #f8f0e6;
 
-// For example:
-$red: #FD1015;
-$blue: #0D6EFD;
-$yellow: #FFC65A;
-$orange: #E67E22;
-$green: #1EDD88;
-$gray: #0E0000;
-$light-gray: #F4F4F4;
+body {
+  background-color: $base;
+}
+
+
+#logo {
+  margin: 10px 20px;
+}
+
+.container-flex {
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  img {
+    width: 400px;
+  }
+}
+
