@@ -1,0 +1,18 @@
+
+<div class="container">
+  <h1>Tous nos ressources</h1>
+
+  <div class="card-grid" id="card-grid-article">
+    <% @ressources.each do |r| %>
+      <div class="card-article card">
+        <div style="background-image: url(<%= asset_path 'article.jpg' %>)", class="card-article-img">
+          <%= image_tag "profil.jpg", class:"card-article-avatar avatar-small avatar" %>
+        </div>
+        <%= r.user.email %>
+        <%= r.title %>
+        <%= r.content %>
+      </div>
+    <% end %>
+  </div>
+
+</div>

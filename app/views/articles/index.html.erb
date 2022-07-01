@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>Tous nos articles</h1>
+
+  <div class="card-grid" id="card-grid-article">
+    <% @articles.each do |article| %>
+      <div class="card-article card">
+        <div style="background-image: url(<%= asset_path 'article.jpg' %>)", class="card-article-img">
+          <%= image_tag "profil.jpg", class:"card-article-avatar avatar-small avatar" %>
+        </div>
+        <p><%= article.user.email %></p>
+        <p><%= article.title %></p>
+        <p><%= article.content %></p>
+      </div>
+    <% end %>
+  </div>
+
+</div>
+
+
