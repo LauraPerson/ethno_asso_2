@@ -32,7 +32,7 @@ class RessourcesController < ApplicationController
   private 
 
   def ressource_params 
-    params.require(:ressource).permit(:title, :content)
+    params.require(:ressource).permit(:title, :content, :photo)
   end 
 
 end

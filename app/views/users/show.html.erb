@@ -1,20 +1,33 @@
 
 <div class="container center-element">
+  <% if @user.photo.attached? %>
+    <div class="avatar avatar-big" id="avatar-dash" style="background-image: url('<%= cl_image_path @user.photo.key, height: 300%>')">
+      <%= link_to edit_users_admin_path(current_user) do %>
+        <i class="fa-solid fa-pen-to-square" id="edit-user"></i>
+      <% end %>
+    </div>
+  <% else %>
+    <div style="background-image: url(<%= asset_path 'profil.jpg' %>)", class="avatar avatar-big" id="avatar-dash">
+      <%= link_to edit_users_admin_path(current_user) do %>
+        <i class="fa-solid fa-pen-to-square" id="edit-user"></i>
+      <% end %>
+    </div>
+  <% end %>
+  <p><%= @user.first_name %> <%= @user.last_name %> </p>
+  <p><%= @user.description %></p>
 
-  <%= image_tag "profil.jpg", class:"avatar avatar-big" %>
+  <div class="flex-center">
+    <%= link_to new_article_path, class:"btn-primary m-1" do %>
+        Créer un article
+    <% end %>
+    <%= link_to new_ressource_path, class:"btn-primary m-1" do %>
+        Ajouter une ressource
+    <% end %>
+    <%= link_to new_users_admin_path, class:"btn-primary m-1" do %>
+        Ajouter un membre
+    <% end %>
+  </div>
 
-  <%= link_to edit_users_admin_path(current_user), class:"btn-primary" do %>
-      Mettre mon profil à jour
-  <% end %>
-  <%= link_to new_article_path, class:"btn-primary" do %>
-      Créer un article
-  <% end %>
-  <%= link_to new_ressource_path, class:"btn-primary" do %>
-      Ajouter une ressource
-  <% end %>
-  <%= link_to new_users_admin_path, class:"btn-primary" do %>
-      Ajouter un membre
-  <% end %>
 
 
 </div>
