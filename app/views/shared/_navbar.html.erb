@@ -4,7 +4,7 @@
   </div>
   <div>
     <% if current_user %>
-      <%= link_to users_admin_path(current_user) do %>
+      <%= link_to dashboard_path(current_user) do %>
       <%= image_tag "profil.jpg", class:"avatar avatar-small" %>
       <% end %>
     <% end %>

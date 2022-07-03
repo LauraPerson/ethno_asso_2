@@ -8,7 +8,7 @@
     </div>
   <% else %>
     <div style="background-image: url(<%= asset_path 'profil.jpg' %>)", class="avatar avatar-big" id="avatar-dash">
-      <%= link_to edit_users_admin_path(current_user) do %>
+      <%= link_to edit_dashboard_path(current_user) do %>
         <i class="fa-solid fa-pen-to-square" id="edit-user"></i>
       <% end %>
     </div>
@@ -23,7 +23,7 @@
     <%= link_to new_ressource_path, class:"btn-primary m-1" do %>
         Ajouter une ressource
     <% end %>
-    <%= link_to new_users_admin_path, class:"btn-primary m-1" do %>
+    <%= link_to new_dashboard_path, class:"btn-primary m-1" do %>
         Ajouter un membre
     <% end %>
   </div>
