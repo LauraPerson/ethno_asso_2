@@ -1,0 +1,9 @@
+  <div class="container">
+    <%= simple_form_for @user, url: users_admin_path(@user) do |f| %>
+      <%= f.input :first_name, label:"Prénom" %>
+      <%= f.input :last_name, label:"Nom" %>
+      <%= f.input :description, label:"Fonction au sein d'Ethno"%>
+      <%= f.input :photo, as: :file, label:"Photo de Profil" %>
+      <%= f.submit "Modifier mon profil", class:"btn-primary" %>
+    <% end %>
+  </div>

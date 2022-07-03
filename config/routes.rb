@@ -6,9 +6,8 @@ Rails.application.routes.draw do
   get "support", to: "pages#support"
   get "contact", to: "pages#contact"
   get "home", to: "pages#contact"
-
   resources :articles
   resources :ressources
-  resources :users_admin, :controller => 'users'
+  resources :dashboard, :controller => 'users'
 
 end

@@ -1,7 +1,7 @@
 
 .avatar {
   border-radius: 50%;
-  object-fit: cover;
+  background-size: cover;
   border: 2px solid $secondary;
 }
 
@@ -17,4 +17,7 @@
 }
 
 
-
+#avatar-dash {
+  margin: 0 auto;
+  position: relative;
+}

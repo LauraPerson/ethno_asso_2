@@ -46,8 +46,10 @@ gem "bootsnap", require: false
 gem "sassc-rails"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-# gem "image_processing", "~> 1.2"
+gem "image_processing", "~> 1.2"
 gem "pundit"
+gem "dotenv-rails", groups: [:development, :test]
+gem "cloudinary"
 
 gem "devise"
 gem "autoprefixer-rails"
@@ -77,3 +79,5 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem "importmap-rails", "~> 1.1"
