@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     @user.admin = true
     authorize @user
     @user.save 
-    redirect_to users_admin_path(@user)
+    redirect_to dashboard_path(@user)
   end
 
   def edit
@@ -26,7 +26,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.update(user_params)
     authorize @user
-    redirect_to users_admin_path
+    redirect_to dashboard_path
   end
 
   private 
