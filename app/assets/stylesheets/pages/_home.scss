@@ -1,6 +1,34 @@
+.banner {
+  padding: 20px;
+  h2 {
+    box-shadow: $primary 0px -0.4rem 0px inset, inset 0 -1rem 0 white;
+    width: fit-content;
+  }
+
+}
+
 .banner-top {
   height: calc(100vh - 60px);
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-image: url('background.png');
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
+}
+
+.banner-center {
+  background-color: white;
+  border-radius: 10px;
+}
+
+.banner-bottom {
+  background-color: white;
+
+}
+
+#team {
+
+  padding: 20px;
 }
