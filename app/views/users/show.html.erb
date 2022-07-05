@@ -23,8 +23,10 @@
     <%= link_to new_ressource_path, class:"btn-primary m-1" do %>
         Ajouter une ressource
     <% end %>
-    <%= link_to new_dashboard_path, class:"btn-primary m-1" do %>
-        Ajouter un membre
+    <% if @user.super_admin == true %>
+      <%= link_to new_dashboard_path, class:"btn-primary m-1" do %>
+          Ajouter un membre
+      <% end %>
     <% end %>
   </div>
 
