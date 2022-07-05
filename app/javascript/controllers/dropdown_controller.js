@@ -10,13 +10,13 @@ export default class extends Controller {
   }
   openDropdown(e) {
     e.preventDefault()
-    console.log(this.dropdownTarget)
-    this.dropdownTarget.classList.remove("display-none")
-    this.dropdownTarget.classList.add("display")
-    this.dropdownTarget.classList.remove("display")
-
-
-
+    if (this.dropdownTarget.className == "navbar-dropdown display-none") {
+      this.dropdownTarget.classList.remove("display-none")
+      this.dropdownTarget.classList.add("display")
+    } else {
+      this.dropdownTarget.classList.remove("display")
+      this.dropdownTarget.classList.add("display-none")
+    }
   }
 }
 

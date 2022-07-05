@@ -72,3 +72,8 @@
     font-size: 60px;
   }
 }
+
+
+.carousel-inner .item { 
+  transition: all 0.5s ease !important; 
+}

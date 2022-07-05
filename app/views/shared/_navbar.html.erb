@@ -11,30 +11,20 @@
     <div class="dropdown-container" data-controller="dropdown">
       <% if current_user %>
         <div data-action="click->dropdown#openDropdown">
-          <%= link_to dashboard_path(current_user) do %>
             <%= image_tag "profil.jpg", class:"avatar avatar-small", id:"btn-dashboard" %>
-          <% end %>
         </div>
       <% end %>
       <div class="navbar-dropdown display-none" data-dropdown-target="dropdown">
+        <% if user_signed_in? %>
+          <div class="dropdown-item">
+            <%= link_to 'Tableau de Bord', dashboard_path(current_user) %>
+          </div>
+          <div class="dropdown-item">
+            <%= button_to( "Log Out", destroy_user_session_path, method: :delete, id:"btn-logout") %>
+          </div>
+        <% end %>
       </div>
     </div>
-      <% if user_signed_in? %>
-        <%= button_to( "Log Out", destroy_user_session_path, method: :delete, id:"btn-logout", class:"underline-hover") %>
-      <% end %>
-
-
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-    Dropdown button
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-    <%= link_to articles_path %>
-    <li><a class="dropdown-item" href="#">Action</a></li>
-    <li><a class="dropdown-item" href="#">Another action</a></li>
-    <li><a class="dropdown-item" href="#">Something else here</a></li>
-  </ul>
-</div>
   </div>
 
 </div>
