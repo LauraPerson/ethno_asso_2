@@ -9,6 +9,10 @@ class RessourcePolicy < ApplicationPolicy
     user.admin?
   end
 
+  def index?
+    true
+  end
+
   def show?
     true
   end

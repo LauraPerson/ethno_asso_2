@@ -11,3 +11,16 @@
 #read-article {
   width: fit-content;
 }
+#btn-logout {
+  width: fit-content;
+  border: none;
+  background: none;
+  padding: 12px;
+}
+
+#btn-dashboard:hover {
+  border: 2px solid $primary;
+  transition: border 0.1s .2s;
+
+
+}

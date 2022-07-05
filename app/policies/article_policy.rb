@@ -9,6 +9,10 @@ class ArticlePolicy < ApplicationPolicy
     user.admin?
   end
 
+  def index?
+    true
+  end
+
   def show?
     true
   end

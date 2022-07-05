@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home ]
+  skip_before_action :authenticate_user!, only: [:home, :support, :contact, :about]
 
   def home
     @articles_with_photo = []
@@ -11,5 +11,14 @@ class PagesController < ApplicationController
     @last_articles_with_photos = @articles_with_photo.last(3)
     
     @team = User.all.where(admin: true)
+  end
+
+  def about
+  end
+
+  def support
+  end
+
+  def contact
   end
 end
