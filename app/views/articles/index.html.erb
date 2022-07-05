@@ -5,8 +5,8 @@
     <% @articles.each do |article| %>
       <%= link_to article_path(article) do %>
         <div class="card-article card">
-          <% if article.photo.attached? %>
-            <div class="card-article-img" style="background-image: url('<%= cl_image_path article.photo.key, height: 300%>')">
+          <% if article.photos.attached? %>
+            <div class="card-article-img" style="background-image: url('<%= cl_image_path article.photos.first.key, height: 300%>')">
               <%= image_tag "profil.jpg", class:"card-article-avatar avatar-small avatar" %>
             </div>
           <% else %>

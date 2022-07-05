@@ -12,7 +12,6 @@ class ArticlesController < ApplicationController
   end
 
 
-
   def new
     @article = Article.new
     authorize @article
@@ -25,7 +24,17 @@ class ArticlesController < ApplicationController
     authorize @article
     @article.save 
     redirect_to article_path(@article)
+  end
 
+  def edit
+    @article = Article.find(params[:id])
+  end
+
+  def update
+    @article = Article.find(params[:id])
+    @article.update(article_params)
+    # No need for app/views/articles/update.html.erb
+    redirect_to article_path(@article)
   end
 
   private 
