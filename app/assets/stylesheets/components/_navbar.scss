@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 120px;
+  height: 160px;
 }
 
 .navbar-ethno > div {
@@ -11,9 +11,12 @@
 }
 
 .navbar-ethno div a {
-  color: $primary;
+  color: black;
   margin-right: 15px;
   text-decoration: none;
   padding: 12px;
 }
 
+#logo {
+  margin-top: 20px;
+}
