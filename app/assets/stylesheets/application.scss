@@ -5,6 +5,7 @@
 
 // External libraries
 @import "bootstrap/scss/bootstrap";
+
 @import "font-awesome";
 
 // Your CSS partials
@@ -31,3 +32,11 @@ a {
   right: 0;
 }
 
+
+.display-none {
+  display: none;
+}
+
+.display {
+  display: block;
+}
