@@ -1,4 +1,4 @@
-<div class="navbar">
+<div class="navbar-ethno">
   <div id="logo">
     <%= link_to image_tag("logo.png", height: 80), root_path%>
   </div>
@@ -16,9 +16,9 @@
       <% end %>
     </div>
     <%= link_to "À propos de nous", about_path, class:"underline-hover"  %>
+    <%= link_to "Nos projets", articles_path, class:"underline-hover"  %>
     <%= link_to "Nos Ressources", ressources_path, class:"underline-hover"  %>
-    <%= link_to "Nos articles!", articles_path, class:"underline-hover"  %>
+    <%= link_to "Soutenez-nous!", support_path, class:"underline-hover"  %>
     <%= link_to "Contact", contact_path, class:"underline-hover"  %>
-    <%= link_to "Supportez-nous!", support_path, class:"underline-hover"  %>
   </div>
 </div>

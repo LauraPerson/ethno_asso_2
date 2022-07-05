@@ -1,15 +1,16 @@
-.navbar {
+.navbar-ethno {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height: 120px;
 }
 
-.navbar > div {
+.navbar-ethno > div {
   text-align: end;
 }
 
-.navbar div a {
+.navbar-ethno div a {
   color: $primary;
   margin-right: 15px;
   text-decoration: none;
