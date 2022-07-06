@@ -32,8 +32,8 @@ class ArticlesController < ApplicationController
 
   def update
     @article = Article.find(params[:id])
+    photos = @article.photos 
     @article.update(article_params)
-    # No need for app/views/articles/update.html.erb
     redirect_to article_path(@article)
   end
 

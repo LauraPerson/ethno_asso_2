@@ -1,8 +1,8 @@
 <div class="container">
   <%= simple_form_for((@article), data: {turbo: false}) do |f| %>
-    <%= f.input :title %>
-    <%= f.input :content, as: :rich_text_area %>
-    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-    <%= f.submit class:"btn-primary"%>
+    <%= f.input :title, placeholder: "Titre de l'article", label: false  %>
+    <%= f.input :content, as: :rich_text_area, placeholder: "Contenu de l'article", label: false   %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true }, label:"Ajouter des images" %>
+    <%= f.submit "Publier", class:"btn-primary"%>
   <% end %>
 </div>
