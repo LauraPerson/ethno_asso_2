@@ -1,22 +1,23 @@
 <div class="container">
-  <h1>Tous nos articles</h1>
+  <h1>Nos projets</h1>
 
   <div class="card-grid" id="card-grid-article">
     <% @articles.each do |article| %>
       <%= link_to article_path(article) do %>
         <div class="card-article card d-flex">
-          <div class="d-flex">
-            <div>
-              <h3><%= article.title %></h3>
-              <p><%= short_content(article) %></p>
+          <div class="d-flex justify-content-between">
+            <div class="d-flex flex-column justify-content-between">
+              <div>
+                <h3><%= article.title %></h3>
+                <p><%= short_content(article) %></p>
+              </div>
+              <div class="text-grey">  Publié par <%= article.user.name %> le <%= article.created_at %> </div>
             </div>
             <div class="card-article-img">
               <%= photo(article) %>
             </div>
           </div>
-          <div  class="card-article-avatar avatar-small avatar">
-            <%= avatar(article.user) %>
-          </div>
+
         </div>
       <% end %>
     <% end %>
