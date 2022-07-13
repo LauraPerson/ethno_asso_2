@@ -5,10 +5,8 @@
 
 .card {
   border-radius: 5px;
-  border: 2px solid $primary;
   padding: 20px;
   box-shadow: 10px 10px 30px rgba(0,0,0,0.4);
-  
 }
 
 .card-user {
@@ -22,17 +20,13 @@
 }
 
 #card-grid-article {
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
 }
 
-.card-article {
-}
-
-.card-article-img {
-  position: relative;
-  width: 100%;
+.card-article-img img {
+  width: 300px;
   height: 200px;
-  background-size: cover;
+  object-fit: cover;
 }
 
 .card-article-avatar {

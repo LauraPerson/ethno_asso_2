@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   def home
     @articles_with_photo = []
     Article.all.each do |article|
-      if article.photo.attached?
+      if article.photos.attached?
         @articles_with_photo << article
       end
     end

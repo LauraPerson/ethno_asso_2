@@ -4,17 +4,19 @@
   <div class="card-grid" id="card-grid-article">
     <% @articles.each do |article| %>
       <%= link_to article_path(article) do %>
-        <div class="card-article card">
-          <% if article.photos.attached? %>
-            <div class="card-article-img" style="background-image: url('<%= cl_image_path article.photos.first.key, height: 300%>')">
-              <%= image_tag "profil.jpg", class:"card-article-avatar avatar-small avatar" %>
+        <div class="card-article card d-flex">
+          <div class="d-flex">
+            <div>
+              <h3><%= article.title %></h3>
+              <p><%= short_content(article) %></p>
             </div>
-          <% else %>
-            <div style="background-image: url(<%= asset_path 'article.jpg' %>)", class="card-article-img">
-              <%= image_tag "profil.jpg", class:"card-article-avatar avatar-small avatar" %>
+            <div class="card-article-img">
+              <%= photo(article) %>
             </div>
-          <% end %>
-          <h4 class="my-3"><%= article.title %></h4>
+          </div>
+          <div  class="card-article-avatar avatar-small avatar">
+            <%= avatar(article.user) %>
+          </div>
         </div>
       <% end %>
     <% end %>

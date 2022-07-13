@@ -8,11 +8,15 @@
         <div class="card-article card">
           <% if r.photo.attached? %>
             <div class="card-article-img" style="background-image: url('<%= cl_image_path r.photo.key, height: 300%>')">
-              <%= image_tag "profil.jpg", class:"card-article-avatar avatar-small avatar" %>
+              <div  class="card-article-avatar avatar-small avatar">
+                <%= avatar(r.user) %>
+              </div>
             </div>
           <% else %>
             <div style="background-image: url(<%= asset_path 'article.jpg' %>)", class="card-article-img">
-              <%= image_tag "profil.jpg", class:"card-article-avatar avatar-small avatar" %>
+              <div  class="card-article-avatar avatar-small avatar">
+                <%= avatar(r.user) %>
+              </div> 
             </div>
           <% end %>
           <%= r.user.email %>
