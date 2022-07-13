@@ -11,7 +11,7 @@
                 <h3><%= article.title %></h3>
                 <p><%= short_content(article) %></p>
               </div>
-              <div class="text-grey">  Publié par <%= article.user.name %> le <%= article.created_at %> </div>
+              <div class="text-grey">  Publié par <%= article.user.name %> le <%= article.created_at.strftime("%I:%M") %> </div>
             </div>
             <div class="card-article-img">
               <%= photo(article) %>
