@@ -22,4 +22,8 @@ module ApplicationHelper
     return content + "..." + '[Lire plus]'
   end
 
+  def date(element)
+    element.created_at.strftime("%m/%d/%Y") 
+  end
+
 end

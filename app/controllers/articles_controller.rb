@@ -34,6 +34,7 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     photos = @article.photos 
     @article.update(article_params)
+    
     redirect_to article_path(@article)
   end
 
@@ -41,7 +42,6 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     authorize @article
     @article.destroy
-    flash[:success] = "you have successfully destroyed."
 
     redirect_to articles_path
   end
