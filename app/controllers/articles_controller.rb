@@ -4,6 +4,7 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.all.order(created_at: :desc)
+    @archived_articles = @articles.where(archive: true)
   end
 
   def show 
@@ -32,7 +33,7 @@ class ArticlesController < ApplicationController
 
   def update
     @article = Article.find(params[:id])
-    photos = @article.photos 
+    photos = @article.photos
     @article.update(article_params)
     
     redirect_to article_path(@article)
@@ -49,7 +50,7 @@ class ArticlesController < ApplicationController
   private 
 
   def article_params 
-    params.require(:article).permit(:title, :content, photos: [])
+    params.require(:article).permit(:title, :content, :archive, photos: [] )
   end 
 
 
