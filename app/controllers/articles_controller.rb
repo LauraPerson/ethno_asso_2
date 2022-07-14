@@ -12,7 +12,6 @@ class ArticlesController < ApplicationController
   end
 
 
-
   def new
     @article = Article.new
     authorize @article
@@ -25,13 +24,32 @@ class ArticlesController < ApplicationController
     authorize @article
     @article.save 
     redirect_to article_path(@article)
+  end
 
+  def edit
+    @article = Article.find(params[:id])
+  end
+
+  def update
+    @article = Article.find(params[:id])
+    photos = @article.photos 
+    @article.update(article_params)
+    redirect_to article_path(@article)
+  end
+
+  def destroy
+    @article = Article.find(params[:id])
+    authorize @article
+    @article.destroy
+    flash[:success] = "you have successfully destroyed."
+
+    redirect_to articles_path
   end
 
   private 
 
   def article_params 
-    params.require(:article).permit(:title, :content, :photo)
+    params.require(:article).permit(:title, :content, photos: [])
   end 
 
 

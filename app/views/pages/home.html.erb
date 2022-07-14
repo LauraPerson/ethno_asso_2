@@ -17,16 +17,11 @@
     <div class="d-flex justify-content-around my-3"  id="team">
       <% @team.each do |member| %>
         <div class="d-flex flex-column align-items-center">
-          <% if member.photo.attached? %>
-            <div class="avatar avatar-big" id="avatar-dash" style="background-image: url('<%= cl_image_path member.photo.key, height: 300%>')">
-            </div>
-          <% else %>
-            <div style="background-image: url(<%= asset_path 'profil.jpg' %>)", class="avatar avatar-big" id="avatar-dash">
-            </div>
-          <% end %>
+          <div class="avatar avatar-big" id="avatar-dash">
+            <%= avatar(member) %>
+          </div>
           <p><%= member.name %></p>
           <p><%= member.description %></p>
-
         </div>
       <% end %>
     </div>
@@ -55,7 +50,7 @@
     <h2>Nos derniers articles</h2>
     <div class="article-container">
       <% @last_articles_with_photos.each do |article| %>
-        <div class="rectangle-card" style="background-image: url('<%= cl_image_path article.photo.key, height: 300%>')">
+        <div class="rectangle-card" style="background-image: url('<%= cl_image_path article.photos.first.key, height: 300%>')">
           <p><%= article.title %></p>
           <%= link_to article_path(article) do %>
             <div class="btn-primary" id="read-article">

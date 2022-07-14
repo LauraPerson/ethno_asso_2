@@ -1,20 +1,23 @@
 <div class="container">
-  <h1>Tous nos articles</h1>
+  <h1>Nos projets</h1>
 
   <div class="card-grid" id="card-grid-article">
     <% @articles.each do |article| %>
       <%= link_to article_path(article) do %>
-        <div class="card-article card">
-          <% if article.photo.attached? %>
-            <div class="card-article-img" style="background-image: url('<%= cl_image_path article.photo.key, height: 300%>')">
-              <%= image_tag "profil.jpg", class:"card-article-avatar avatar-small avatar" %>
+        <div class="card-article card d-flex">
+          <div class="d-flex justify-content-between">
+            <div class="d-flex flex-column justify-content-between">
+              <div>
+                <h3><%= article.title %></h3>
+                <p><%= short_content(article) %></p>
+              </div>
+              <div class="text-grey">  Publié par <%= article.user.name %> le <%= article.created_at.strftime("%I:%M") %> </div>
             </div>
-          <% else %>
-            <div style="background-image: url(<%= asset_path 'article.jpg' %>)", class="card-article-img">
-              <%= image_tag "profil.jpg", class:"card-article-avatar avatar-small avatar" %>
+            <div class="card-article-img">
+              <%= photo(article) %>
             </div>
-          <% end %>
-          <h4 class="my-3"><%= article.title %></h4>
+          </div>
+
         </div>
       <% end %>
     <% end %>

@@ -1,18 +1,11 @@
 
 <div class="container center-element p-3">
-  <% if @user.photo.attached? %>
-    <div class="avatar avatar-big" id="avatar-dash" style="background-image: url('<%= cl_image_path @user.photo.key, height: 300%>')">
-      <%= link_to edit_dashboard_path(current_user) do %>
-        <i class="fa-solid fa-pen-to-square" id="edit-user"></i>
-      <% end %>
-    </div>
-  <% else %>
-    <div style="background-image: url(<%= asset_path 'profil.jpg' %>)", class="avatar avatar-big" id="avatar-dash">
-      <%= link_to edit_dashboard_path(current_user) do %>
-        <i class="fa-solid fa-pen-to-square" id="edit-user"></i>
-      <% end %>
-    </div>
-  <% end %>
+  <div class="avatar avatar-big" id="avatar-dash">
+    <%= avatar(@user) %>
+    <%= link_to edit_dashboard_path(current_user) do %>
+      <i class="fa-solid fa-pen-to-square" id="edit-user"></i>
+    <% end %>
+  </div>
   <h2><%= @user.first_name %> <%= @user.last_name %> </h2>
   <p><%= @user.description %></p>
 
