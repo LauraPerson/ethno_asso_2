@@ -45,6 +45,10 @@
 
 }
 
+.card-article-content {
+  display: flex;
+}
+
 
 .card-article-ressource {
   border-radius: 10px;
@@ -95,6 +99,45 @@
     width: 100%;
     object-fit: cover;
     object-position: center;
+  }
+}
+
+
+
+@media (min-width: 1224px) {
+
+
+}
+
+@media (max-width: 1024px) {
+
+
+
+}
+
+@media (max-width: 768px) {
+  .card-article-content {
+    display: block;
+  }
+  .card-article-img img {
+    width: 100%;
+  }
+
+  .card-article p {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-article-content {
+    display: block;
+  }
+
+  .card-article-img img {
+    width: 100%;
+  }
+  .card-article p {
+    display: none;
   }
 }
 
