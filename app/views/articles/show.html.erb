@@ -34,10 +34,10 @@
         <% end %>
         
         <%= button_to( "Supprimer", article_path(@article), method: :delete, id:"btn-logout") %>
-        
-        <%= simple_form_for((@article), data: {turbo: false}) do |f| %>
-          <%= f.input :archive, as: :hidden, input_html: { class: "toggle" } %>
-          <%= f.submit "Archiver"%>
+
+
+        <% if @article.archive == false %>
+          <%= button_to "Archiver", archive_article_path(@article.id), method: :patch %>
         <% end %>
       <% end %>
     </div>

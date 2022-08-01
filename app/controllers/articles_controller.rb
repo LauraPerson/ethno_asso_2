@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
+  before_action :find_article, only: %i[show archive]
 
 
   def index
@@ -39,6 +40,12 @@ class ArticlesController < ApplicationController
     redirect_to article_path(@article)
   end
 
+  def archive
+    @article.update(archive: true)
+    # redirect_to company_path(@project.company)
+  end
+
+
   def destroy
     @article = Article.find(params[:id])
     authorize @article
@@ -52,6 +59,10 @@ class ArticlesController < ApplicationController
   def article_params 
     params.require(:article).permit(:title, :content, :archive, photos: [] )
   end 
+
+  def find_article
+    @article = Article.find(params[:id])
+  end
 
 
 end
