@@ -23,6 +23,15 @@
   grid-template-columns: 1fr;
 }
 
+.card-article {
+  border: 2px solid transparent;
+}
+
+.card-article:hover {
+  border: 2px solid $primary;
+}
+
+
 .card-article-img img {
   width: 300px;
   height: 200px;
@@ -34,6 +43,10 @@
   top: -10px;
   left: -10px;
 
+}
+
+.card-article-content {
+  display: flex;
 }
 
 
@@ -81,11 +94,50 @@
 
 .carousel-item { 
   width: 100%;
-  height: 500px;
   img {
     width: 100%;
+    height: 70vh;
     object-fit: cover;
     object-position: center;
+  }
+}
+
+
+
+@media (min-width: 1224px) {
+
+
+}
+
+@media (max-width: 1024px) {
+
+
+
+}
+
+@media (max-width: 768px) {
+  .card-article-content {
+    display: block;
+  }
+  .card-article-img img {
+    width: 100%;
+  }
+
+  .card-article p {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-article-content {
+    display: block;
+  }
+
+  .card-article-img img {
+    width: 100%;
+  }
+  .card-article p {
+    display: none;
   }
 }
 

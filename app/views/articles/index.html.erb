@@ -1,17 +1,16 @@
 <div class="container">
   <h1>Nos projets</h1>
-
   <div class="card-grid" id="card-grid-article">
     <% @articles.each do |article| %>
-      <%= link_to article_path(article) do %>
+      <%= link_to article_path(article), class:"card-article-link" do %>
         <div class="card-article card d-flex">
-          <div class="d-flex justify-content-between">
+          <div class="card-article-content justify-content-between">
             <div class="d-flex flex-column justify-content-between">
               <div>
                 <h3><%= article.title %></h3>
                 <p><%= short_content(article) %></p>
               </div>
-              <div class="text-grey">  Publié par <%= article.user.name %> le <%= article.created_at.strftime("%I:%M") %> </div>
+              <div class="text-grey">  Publié par <%= article.user.name %> le <%= date(article) %> </div>
             </div>
             <div class="card-article-img">
               <%= photo(article) %>
@@ -21,6 +20,34 @@
         </div>
       <% end %>
     <% end %>
+  </div>
+  <div data-controller="archive">
+    <div class="d-flex my-4 align-items-center">
+      <h1 class="">Archivés</h1>
+      <a href="" data-action="click->archive#openArchive" data-archive-target="button" class="mx-2 btn-primary">
+        Voir les projets archivés?
+      </a>
+    </div>
+    <div data-archive-target="dropdown" class="dropdown-archive display-none">
+      <% @archived_articles.each do |article| %>
+        <%= link_to article_path(article), class:"card-article-link" do %>
+          <div class="card-article card d-flex my-3">
+            <div class="card-article-content justify-content-between">
+              <div class="d-flex flex-column justify-content-between">
+                <div>
+                  <h3><%= article.title %></h3>
+                  <p><%= short_content(article) %></p>
+                </div>
+                <div class="text-grey">  Publié par <%= article.user.name %> le <%= date(article) %> </div>
+              </div>
+              <div class="card-article-img">
+                <%= photo(article) %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
   </div>
 
 </div>

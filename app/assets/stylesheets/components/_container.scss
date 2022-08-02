@@ -1,7 +1,18 @@
 .container {
   width: 80vw;
-  margin: 0 auto;
-  margin-top: 20px;
+  margin: 20px auto;
+}
+
+
+
+.container-flex {
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  img {
+    width: 400px;
+  }
 }
 
 .article-container {
@@ -26,5 +37,26 @@
       padding: 5px;
 
     }
+  }
+}
+
+@media (min-width: 1224px) {
+
+
+}
+
+@media (max-width: 1024px) {
+
+
+
+}
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 90vw;
   }
 }

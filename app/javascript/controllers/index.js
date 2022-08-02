@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import ArchiveController from "./archive_controller.js"
+application.register("archive", ArchiveController)
+
 import DropdownController from "./dropdown_controller.js"
 application.register("dropdown", DropdownController)
 

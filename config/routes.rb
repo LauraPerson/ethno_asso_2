@@ -6,7 +6,11 @@ Rails.application.routes.draw do
   get "support", to: "pages#support"
   get "contact", to: "pages#contact"
   get "home", to: "pages#contact"
-  resources :articles
+  resources :articles do 
+    member do 
+      patch 'archive'
+    end
+  end
   resources :ressources
   resources :dashboard, :controller => 'users'
 

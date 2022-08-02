@@ -5,7 +5,25 @@
   border-radius: 5px;
   text-decoration: none;
   display: block;
-  width: 200px;
+  width: fit-content;
+}
+
+.btn-secondary {
+  color: $secondary;
+  background-color: $base;
+  border: 1px solid $secondary;
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  width: fit-content;
+  margin: 10px 5px;
+  &:hover {
+    color: $primary;
+    background-color: $base;
+    border: 1px solid $primary;
+  }
 }
 
 #read-article {
