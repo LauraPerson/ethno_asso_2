@@ -294,7 +294,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   font-awesome-sass (~> 6.1)
-  image_processing
+  image_processing (~> 1.2)
   jbuilder
   jsbundling-rails
   pg (~> 1.1)
