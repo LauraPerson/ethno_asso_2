@@ -30,13 +30,15 @@ class ArticlesController < ApplicationController
 
   def edit
     @article = Article.find(params[:id])
+    authorize @article
+
   end
 
   def update
     @article = Article.find(params[:id])
+    authorize @article
     photos = @article.photos
     @article.update(article_params)
-    
     redirect_to article_path(@article)
   end
 
