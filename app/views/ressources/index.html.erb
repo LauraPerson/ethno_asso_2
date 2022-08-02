@@ -1,27 +1,31 @@
 
 <div class="container">
-  <h1>Tous nos ressources</h1>
+  <h1>Toutes nos ressources</h1>
+  <div class="search-form">
+    <%= form_tag ressources_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Trouver une ressource"
+      %>
+      <%= submit_tag "Chercher", class: "btn btn-primary" %>
+    <% end %>
+  </div>
 
-  <div class="card-grid" id="card-grid-article">
+  <div class="card-grid" id="card-grid-ressource">
     <% @ressources.each do |r| %>
       <%= link_to ressource_path(r) do %>
-        <div class="card-article card">
-          <% if r.photo.attached? %>
-            <div class="card-article-img" style="background-image: url('<%= cl_image_path r.photo.key, height: 300%>')">
-              <div  class="card-article-avatar avatar-small avatar">
-                <%= avatar(r.user) %>
-              </div>
+        <div class="card-ressource card">
+          <div class="card-ressource-img">
+            <div id="ressource-photo"><%= photo(r) %></div>
+          </div>
+          <div class="position-relative">
+            <div class="card-ressource-avatar avatar-small avatar">
+              <%= avatar(r.user) %>
             </div>
-          <% else %>
-            <div style="background-image: url(<%= asset_path 'article.jpg' %>)", class="card-article-img">
-              <div  class="card-article-avatar avatar-small avatar">
-                <%= avatar(r.user) %>
-              </div> 
-            </div>
-          <% end %>
-          <%= r.user.email %>
-          <%= r.title %>
-          <%= r.content %>
+            <h3 class="my-4"><%= r.title %></h3>
+            <%= short_content(r) %>
+          </div>
         </div>
       <% end %>
     <% end %>

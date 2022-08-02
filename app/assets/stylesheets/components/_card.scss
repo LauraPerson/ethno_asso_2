@@ -23,6 +23,10 @@
   grid-template-columns: 1fr;
 }
 
+#card-grid-ressource {
+  grid-template-columns: 1fr 1fr;
+}
+
 .card-article {
   border: 2px solid transparent;
 }
@@ -38,11 +42,30 @@
   object-fit: cover;
 }
 
+.card-ressource {
+  border: 2px solid transparent;
+  height: 450px;
+  overflow: hidden;
+}
+
+
+.card-ressource-img #ressource-photo img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+}
+
 .card-article-avatar {
   position: absolute;
   top: -10px;
   left: -10px;
+}
 
+.card-ressource-avatar {
+  position: absolute;
+  top: -25px;
+  right: 20px;
 }
 
 .card-article-content {

@@ -2,7 +2,7 @@
   <h1>Nos projets</h1>
   <div class="card-grid" id="card-grid-article">
     <% @articles.each do |article| %>
-      <%= link_to article_path(article), class:"card-article-link" do %>
+      <%= link_to article_path(article) do %>
         <div class="card-article card d-flex">
           <div class="card-article-content justify-content-between">
             <div class="d-flex flex-column justify-content-between">
@@ -23,7 +23,7 @@
   </div>
   <div data-controller="archive">
     <div class="d-flex my-4 align-items-center">
-      <h1 class="">Archivés</h1>
+      <h1 class="">Projets Archivés</h1>
       <a href="" data-action="click->archive#openArchive" data-archive-target="button" class="mx-2 btn-primary">
         Voir les projets archivés?
       </a>

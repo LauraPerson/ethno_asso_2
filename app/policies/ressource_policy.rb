@@ -17,4 +17,16 @@ class RessourcePolicy < ApplicationPolicy
     true
   end
 
+  def edit?
+    user.super_admin? || user == record.user
+  end
+
+  def update?
+    user.super_admin? || user == record.user
+  end
+
+  def destroy?
+    user.super_admin? || user == record.user
+  end
+
 end
