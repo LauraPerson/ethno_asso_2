@@ -40,3 +40,18 @@
   border: 2px solid $primary;
   transition: border 0.1s .2s;
 }
+
+@media (max-width: 768px) {
+
+  #btn-logout {
+    padding: 0px;
+  }
+}
+
+
+@media (max-width: 480px) {
+
+  #btn-logout {
+    padding: 0px;
+  }
+}
