@@ -47,15 +47,29 @@ a {
   display: block;
 }
 
+.alert {
+  z-index: 100;
+}
+
+.d-flex-xl {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
 
 
 @media (min-width: 1224px) {
-
+  h3 {
+    font-size: 24px;
+  }
 }
 
 @media (max-width: 1024px) {
-
+  h3 {
+    font-size: 24px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -72,4 +86,9 @@ a {
   p {
     font-size: 12px;
   }
+
+  .d-flex-xl {
+    flex-direction: column;
+  }
+  
 }

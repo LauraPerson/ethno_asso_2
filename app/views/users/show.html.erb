@@ -2,16 +2,19 @@
 <div class="container center-element p-3">
   <div class="avatar avatar-big" id="avatar-dash">
     <%= avatar(@user) %>
+  </div>
+  <div class="d-flex justify-content-center align-items-center my-2">
+    <h2 class="m-0"><%= @user.first_name %> <%= @user.last_name %> </h2>
     <%= link_to edit_dashboard_path(current_user) do %>
-      <i class="fa-solid fa-pen-to-square" id="edit-user"></i>
+      <i class="fa-solid fa-pen-to-square mx-2"></i>
     <% end %>
   </div>
-  <h2><%= @user.first_name %> <%= @user.last_name %> </h2>
   <p><%= @user.description %></p>
+
 
   <div class="flex-center">
     <%= link_to new_article_path, class:"btn-primary m-1" do %>
-        Créer un article
+        Ajouter un projet
     <% end %>
     <%= link_to new_ressource_path, class:"btn-primary m-1" do %>
         Ajouter une ressource
