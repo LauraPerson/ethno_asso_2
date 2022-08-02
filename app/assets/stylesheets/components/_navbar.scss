@@ -93,6 +93,25 @@
   #logo img {
     height: 60px;
   }
+
+  // pour que la navbar soit avec un hamburger à gauche et le logo à droite 
+
+  #dropdown-hamburger {
+    display: block;
+    margin-left: 10px;
+  }
+
+  #navbar-items {
+    display: none;
+  }
+
+  .navbar-ethno {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -108,6 +127,9 @@
     height: 60px;
     margin-right: 10px;
   }
+
+  // pour que la navbar soit avec un hamburger à gauche et le logo à droite 
+
 
   #dropdown-hamburger {
     display: block;

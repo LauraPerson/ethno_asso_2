@@ -3,6 +3,18 @@
   margin: 20px auto;
 }
 
+
+
+.container-flex {
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  img {
+    width: 400px;
+  }
+}
+
 .article-container {
   display: flex;
 
