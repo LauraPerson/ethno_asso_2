@@ -28,6 +28,8 @@ class RessourcesController < ApplicationController
     @ressource.user = current_user
     authorize @ressource
     @ressource.save 
+    flash.alert = "Nouvelle ressource ajoutée"
+
     redirect_to ressources_path(@ressource)
   end
 
@@ -35,6 +37,7 @@ class RessourcesController < ApplicationController
     @ressource = Ressource.find(params[:id])
     authorize @ressource
     @ressource.destroy
+    flash.alert = "Ressource supprimée"
 
     redirect_to ressources_path
   end

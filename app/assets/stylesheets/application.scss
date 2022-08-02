@@ -47,6 +47,16 @@ a {
   display: block;
 }
 
+.alert {
+  z-index: 100;
+}
+
+.d-flex-xl {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
 
 
@@ -76,4 +86,9 @@ a {
   p {
     font-size: 12px;
   }
+
+  .d-flex-xl {
+    flex-direction: column;
+  }
+  
 }

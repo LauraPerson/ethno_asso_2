@@ -46,6 +46,10 @@
   border: 2px solid transparent;
   height: 450px;
   overflow: hidden;
+  &:hover {
+    border: 2px solid $primary;
+  }
+  
 }
 
 
@@ -149,6 +153,12 @@
   .card-article p {
     display: none;
   }
+  #card-grid-ressource {
+    grid-template-columns: 1fr;
+  }
+  p {
+    display: none;
+  }
 }
 
 @media (max-width: 480px) {
@@ -159,8 +169,31 @@
   .card-article-img img {
     width: 100%;
   }
+  .card-ressource {
+    height: fit-content;
+  }
+
+  .card-article-ressource div {
+    font-size: 14px;
+  }
   .card-article p {
     display: none;
+  }
+
+  #card-grid-ressource {
+    grid-template-columns: 1fr;
+    .card-ressource {
+      height: fit-content;
+    }
+    p {
+      display: none;
+    }
+  }
+
+  .carousel-item { 
+    img {
+      height: 30vh;
+    }
   }
 }
 

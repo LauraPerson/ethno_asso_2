@@ -8,7 +8,7 @@
         class: "form-control",
         placeholder: "Trouver une ressource"
       %>
-      <%= submit_tag "Chercher", class: "btn btn-primary" %>
+      <%= submit_tag "Chercher", class: "btn btn-primary mx-2" %>
     <% end %>
   </div>
 
@@ -24,7 +24,9 @@
               <%= avatar(r.user) %>
             </div>
             <h3 class="my-4"><%= r.title %></h3>
-            <%= short_content(r) %>
+            <p>
+              <%= short_content(r) %>
+            </p>
           </div>
         </div>
       <% end %>

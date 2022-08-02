@@ -4,7 +4,9 @@ class ArticlesController < ApplicationController
 
 
   def index
-    @articles = Article.all.order(created_at: :desc)
+    # @unarchived_articles = Article.all.where(archive: false)
+    @articles = Article.order(created_at: :desc)
+    @unarchived_articles = @articles.where(archive: false)
     @archived_articles = @articles.where(archive: true)
   end
 
@@ -25,6 +27,8 @@ class ArticlesController < ApplicationController
     @article.user = current_user
     authorize @article
     @article.save 
+    flash.alert = "Nouveau projet ajouté"
+
     redirect_to article_path(@article)
   end
 
@@ -45,6 +49,9 @@ class ArticlesController < ApplicationController
   def archive
     @article.update(archive: true)
     # redirect_to company_path(@project.company)
+    flash.alert = "Projet archivé"
+    redirect_to article_path(@article)
+
   end
 
 
@@ -52,6 +59,8 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     authorize @article
     @article.destroy
+    flash.alert = "Projet supprimé"
+
 
     redirect_to articles_path
   end

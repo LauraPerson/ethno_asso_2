@@ -1,7 +1,7 @@
 <div class="container">
   <h1>Nos projets</h1>
   <div class="card-grid" id="card-grid-article">
-    <% @articles.each do |article| %>
+    <% @unarchived_articles.each do |article| %>
       <%= link_to article_path(article) do %>
         <div class="card-article card d-flex">
           <div class="card-article-content justify-content-between">
