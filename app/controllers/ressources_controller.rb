@@ -7,7 +7,7 @@ class RessourcesController < ApplicationController
       sql_query = "title ILIKE :query OR content ILIKE :query"
       @ressources = Ressource.where(sql_query, query: "%#{params[:query]}%")
     else
-      @ressources = Ressource.all
+      @ressources = Ressource.all.order(created_at: :desc)
     end
 
   end
