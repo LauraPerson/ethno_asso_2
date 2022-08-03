@@ -1,44 +1,44 @@
 <link href="https://vjs.zencdn.net/7.20.1/video-js.css" rel="stylesheet" />
 
-<div class="container">
-  <div class="card-article-ressource">
+  <div class="container">
+    <div class="card-article-ressource">
 
-    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <% if @ressource.photos.attached? %>
-          <% @ressource.photos.each_with_index do |photo, index| %>
-              <div class="carousel-item <%= "active" if index == 0 %>">
-                <%= cl_image_tag photo.key, crop: :fill %>
-              </div>
+      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <% if @ressource.photos.attached? %>
+            <% @ressource.photos.each_with_index do |photo, index| %>
+                <div class="carousel-item <%= "active" if index == 0 %>">
+                  <%= cl_image_tag photo.key, crop: :fill %>
+                </div>
+            <% end %>
           <% end %>
+        </div>
+        <% if @ressource.photos.length > 1 %>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         <% end %>
       </div>
-      <% if @ressource.photos.length > 1 %>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      <% end %>
-    </div>
-    <div class="d-flex justify-content-center align-items-center">
-      <h2 class="m-4"><%= @ressource.title %></h2>
-    </div>
-    <div>
-      <p class="m-2 article-content"><%= @ressource.content %></p>
+      <div class="d-flex justify-content-center align-items-center">
+        <h2 class="m-4"><%= @ressource.title %></h2>
+      </div>
+      <div>
+        <p class="m-2 article-content"><%= @ressource.content %></p>
+      </div>
+
+      <div class="d-flex align-items-center justify-content-between">
+        <% if policy(@ressource).edit? %>
+          <%= link_to "Modifier", edit_ressource_path(@ressource), class:"btn-secondary"  %>
+          <%= button_to( "Supprimer", ressource_path(@ressource), method: :delete, class:"btn-secondary") %>
+        <% end %>
+      </div>
     </div>
 
-    <div class="d-flex align-items-center justify-content-between">
-      <% if policy(@ressource).edit? %>
-        <%= link_to "Modifier", edit_ressource_path(@ressource), class:"btn-secondary"  %>
-        <%= button_to( "Supprimer", ressource_path(@ressource), method: :delete, class:"btn-secondary") %>
-      <% end %>
-    </div>
   </div>
 
-</div>
-
-  <script src="https://vjs.zencdn.net/7.20.1/video.min.js"></script>
+<script src="https://vjs.zencdn.net/7.20.1/video.min.js"></script>
