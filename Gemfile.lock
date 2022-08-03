@@ -302,7 +302,6 @@ DEPENDENCIES
   pundit
   rails (~> 7.0.3)
   redis (~> 4.0)
-  ruby-vips
   sassc-rails
   selenium-webdriver
   simple_form!

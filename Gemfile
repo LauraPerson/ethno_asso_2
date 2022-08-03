@@ -51,7 +51,7 @@ gem "pundit"
 gem "dotenv-rails", groups: [:development, :test]
 gem "cloudinary"
 
-gem "ruby-vips"
+# gem "ruby-vips"
 
 gem "devise"
 gem "autoprefixer-rails"
