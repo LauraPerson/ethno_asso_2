@@ -31,10 +31,15 @@
     width: 50%;
     margin: 30px auto;
   }
-
 }
 
 #team {
-
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
   padding: 20px;
+  background-image: url('shape.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }

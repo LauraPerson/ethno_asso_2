@@ -15,6 +15,13 @@
   }
 }
 
+#container-user {
+  background-image: url('shape.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .article-container {
   display: flex;
 

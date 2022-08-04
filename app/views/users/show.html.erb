@@ -1,5 +1,5 @@
 
-<div class="container center-element p-3">
+<div class="container center-element p-3" id="container-user">
   <div class="avatar avatar-big" id="avatar-dash">
     <%= avatar(@user) %>
   </div>
@@ -10,8 +10,6 @@
     <% end %>
   </div>
   <p><%= @user.description %></p>
-
-
   <div class="flex-center">
     <%= link_to new_article_path, class:"btn-primary m-1" do %>
         Ajouter un projet

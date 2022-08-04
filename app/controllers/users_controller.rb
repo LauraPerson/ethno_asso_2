@@ -11,10 +11,10 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    @user.admin = true
     authorize @user
     @user.save 
-    redirect_to dashboard_path(@user)
+    flash.alert = "Nouveau membre ajouté(e)"
+    redirect_to dashboard_path(current_user)
   end
 
   def edit
@@ -32,6 +32,6 @@ class UsersController < ApplicationController
   private 
 
   def user_params
-    params.require(:user).permit(:email, :password, :first_name, :last_name, :description, :photo)
+    params.require(:user).permit(:email, :password, :first_name, :last_name, :description, :admin, :photo)
   end
 end
