@@ -69,8 +69,14 @@
   padding: 5px !important;
 }
 
+@media (min-width: 1225px) {
+  #dropdown-hamburger {
+    display: none;
+  }
 
-@media (min-width: 1224px) {
+}
+
+@media (max-width: 1224px) {
   #dropdown-hamburger {
     display: none;
   }

@@ -1,20 +1,12 @@
-.banner {
-  padding: 20px;
-  h2 {
-    box-shadow: $primary 0px -0.4rem 0px inset, inset 0 -1rem 0 white;
-    width: fit-content;
-  }
-
-}
 
 .banner-top {
-  height: calc(100vh - 60px);
+  height: calc(100vh - 160px);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-image: url('background.png');
+  background-image: url('background3.png');
   background-repeat: no-repeat;
-  background-position: right;
+  background-position: center;
   background-size: contain;
 }
 
@@ -25,10 +17,29 @@
 
 .banner-bottom {
   background-color: white;
+}
 
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 30px;
+  > img {
+    width: 20%;
+  }
+  .about-text {
+    width: 50%;
+    margin: 30px auto;
+  }
 }
 
 #team {
-
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
   padding: 20px;
+  background-image: url('shape.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }

@@ -5,51 +5,33 @@
     </div>
   </div>
 
-  <div class="banner banner-center my-3">
-    <h2 class="my-3">Qui sommes-nous?</h2>
-    <div>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget turpis finibus, feugiat mi at, interdum mauris. Vestibulum molestie gravida risus, ac vulputate velit pellentesque non. Nulla mattis eros sed dolor mollis, a ornare nulla molestie. Quisque ac justo orci. Morbi vitae mollis tellus, et fringilla dolor. In pellentesque quis leo quis tincidunt. Nunc vel elementum turpis. Maecenas fringilla lobortis erat, ut ultrices ante maximus quis. Nam orci risus, efficitur ac tristique et, imperdiet quis erat. Sed interdum purus vel turpis mollis, facilisis auctor felis aliquam. Donec mauris libero, convallis id leo eu, mollis posuere tortor. Praesent velit urna, pulvinar ac pulvinar non, ornare sed sapien. Aenean sit amet varius quam, sit amet elementum turpis.
-
-      Cras vehicula imperdiet volutpat. Curabitur fringilla eu odio et varius. Suspendisse tempus cursus est, sit amet sodales nisl fringilla id. Maecenas sit amet urna sapien. Nulla hendrerit nisi sed odio vehicula, id elementum mauris dictum. Maecenas nec ultrices tellus, eget mattis urna. Curabitur ut egestas massa. Proin bibendum, purus id gravida volutpat, nibh nisl luctus ligula, malesuada euismod turpis ligula in nunc.
-
-      Etiam vitae maximus mauris. Mauris semper felis ut sapien ullamcorper dignissim. Donec ultricies faucibus elit, sit amet imperdiet eros dictum eget. Fusce convallis ligula nec massa ultrices tristique. Sed tincidunt in sapien quis faucibus. Integer pulvinar felis urna, cursus tempus leo venenatis eget. Donec tristique sem urna, eu tincidunt nisl scelerisque in. Morbi maximus tortor a turpis facilisis, ac interdum nisl finibus. Nam sollicitudin massa ac augue convallis, id tincidunt ligula porttitor. Vivamus et sem massa.
-    </div>
-    <div class="d-flex justify-content-around my-3"  id="team">
-      <% @team.each do |member| %>
-        <div class="d-flex flex-column align-items-center">
-          <div class="avatar avatar-big" id="avatar-dash">
-            <%= avatar(member) %>
-          </div>
-          <p><%= member.name %></p>
-          <p><%= member.description %></p>
+  <div class="banner banner-center">
+    <div class="about">
+      <%= image_tag "line2.png" %>
+      <div class="about-text">
+        <div class="d-flex"><%= image_tag "star", width: "60px", height:"60px" %><h3 class="m-3">Qui sommes-nous?</h3></div>
+        <div>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget turpis finibus, feugiat mi at, interdum mauris. Vestibulum molestie gravida risus, ac vulputate velit pellentesque non. Nulla mattis eros sed dolor mollis, a ornare nulla molestie. Quisque ac justo orci. Morbi vitae mollis tellus, et fringilla dolor. In pellentesque quis leo quis tincidunt. Nunc vel elementum turpis. Maecenas fringilla lobortis erat, ut ultrices ante maximus quis. Nam orci risus, efficitur ac tristique et, imperdiet quis erat. Sed interdum purus vel turpis mollis, facilisis auctor felis aliquam. Donec mauris libero, convallis id leo eu, mollis posuere tortor. Praesent velit urna, pulvinar ac pulvinar non, ornare sed sapien. Aenean sit amet varius quam, sit amet elementum turpis.
         </div>
-      <% end %>
+      </div>
     </div>
   </div>
-  <div class="banner m-5">
-    <div class="icon-container d-flex justify-content-around">
-      <div class="icons-card">
-        <i class="fa-solid fa-fingerprint"></i>
-        <h3>Ateliers</h3>
+  <div class="d-flex my-3"><%= image_tag "star", width: "60px", height:"60px" %><h2 class="m-3">Nos membres permanents</h2></div>
+  <div class="my-3"  id="team">
+    <% @team.each do |member| %>
+      <div class="d-flex flex-column align-items-center">
+        <div class="avatar avatar-big" id="avatar-dash">
+          <%= avatar(member) %>
+        </div>
+        <p> <strong><%= member.name %></strong> </p>
+        <p><%= member.description %></p>
       </div>
-      <div class="icons-card">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <h3>Enquêtes</h3>
-      </div>
-      <div class="icons-card">
-        <i class="fa-solid fa-graduation-cap"></i>
-        <h3>Formations</h3>
-      </div>
-      <div class="icons-card">
-        <i class="fa-solid fa-book"></i>
-        <h3>Ressources</h3>
-      </div>
-    </div>
+    <% end %>
   </div>
   <div class="banner banner-bottom my-3">
-    <h2>Nos derniers articles</h2>
+    <h2>Nos derniers projets</h2>
     <div class="article-container">
-      <% @last_articles_with_photos.each do |article| %>
+      <% @last_articles_with_photos.reverse.each do |article| %>
         <div class="rectangle-card" style="background-image: url('<%= cl_image_path article.photos.first.key, height: 300%>')">
           <p><%= article.title %></p>
           <%= link_to article_path(article) do %>
