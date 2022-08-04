@@ -8,7 +8,7 @@ class PagesController < ApplicationController
         @articles_with_photo << article
       end
     end
-    @last_articles_with_photos = @articles_with_photo.last(3)
+    @last_articles_with_photos = @articles_with_photo.sort_by{|e| e[:created_at]}.last(3)
     
     @team = User.all.where(admin: true)
   end
