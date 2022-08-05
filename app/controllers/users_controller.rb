@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
   
   def index
-    @users = User.all
+    @users = policy_scope(User.all)
+    authorize @users
   end
 
   def show
@@ -32,6 +33,14 @@ class UsersController < ApplicationController
     @user.update(user_params)
     authorize @user
     redirect_to dashboard_path
+  end
+
+  def destroy
+    @user = User.find(params[:id])
+    authorize @user
+    @user.destroy
+    flash.alert = "Membre supprimé"
+    redirect_to users_path
   end
 
   private 

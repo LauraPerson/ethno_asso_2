@@ -60,8 +60,6 @@ class ArticlesController < ApplicationController
     authorize @article
     @article.destroy
     flash.alert = "Projet supprimé"
-
-
     redirect_to articles_path
   end
 

@@ -18,9 +18,14 @@
         Ajouter une ressource
     <% end %>
     <% if @user.super_admin == true %>
-      <%= link_to new_dashboard_path, class:"btn-primary m-1" do %>
-          Ajouter un membre
-      <% end %>
+      <div class="d-flex m-1">
+        <%= link_to new_dashboard_path, class:"btn-primary mx-1" do %>
+            Ajouter un membre
+        <% end %>
+        <%= link_to users_path, class:"btn-secondary mx-1" do %>
+            Supprimer un membre
+        <% end %>
+      </div>
     <% end %>
   </div>
 
