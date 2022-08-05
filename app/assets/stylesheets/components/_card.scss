@@ -3,7 +3,7 @@
   grid-gap: 16px;
 }
 
-.card {
+.card-gnl {
   border-radius: 5px;
   padding: 20px;
   box-shadow: 10px 10px 30px rgba(0,0,0,0.4);
@@ -107,6 +107,12 @@
   i {
     font-size: 60px;
   }
+}
+
+.list-card {
+  margin: 10px;
+  background-color: white;
+  width: 60%;
 }
 
 #carouselExampleControls {

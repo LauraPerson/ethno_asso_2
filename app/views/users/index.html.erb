@@ -1,0 +1,8 @@
+<div class="container d-flex flex-column align-items-center">
+  <% @users.each do |user| %>
+    <div class="d-flex align-items-center justify-content-between list-card card-gnl">
+      <p class="m-0"><%= user.first_name %> <%= user.last_name %></p>
+      <%= button_to( "Supprimer ce membre", users_path(user), method: :delete, class:"btn-secondary") %>
+    </div>
+  <% end %>
+</div>
