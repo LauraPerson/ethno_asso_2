@@ -7,7 +7,7 @@
         </div>
         <p class="m-0"><%= user.first_name %> <%= user.last_name %></p>
       </div>
-      <%# <%= button_to "Supprimer ce membre", users_path(user), method: :delete, class:"btn-secondary" %> %>
+      <%= button_to "Supprimer ce membre", user_path(user), method: :delete, class:"btn-secondary" %> %>
 
     </div>
   <% end %>
