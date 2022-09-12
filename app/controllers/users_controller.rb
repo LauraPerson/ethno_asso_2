@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
   
   def index
-    @users = policy_scope(User.all)
+    @users = policy_scope(User.all.where(archive: false))
+    @archived_users = User.all.where(archive: true)
     authorize @users
   end
 
@@ -40,6 +41,19 @@ class UsersController < ApplicationController
     authorize @user
     @user.destroy
     flash.alert = "Membre supprimé"
+    redirect_to users_path
+  end
+
+
+  #  puisque les articles et ressources dépendent des users, on ne supprime pas vraiment les utilisateurs, on les arhive 
+
+
+  def archive
+    @user = User.find(params[:id])
+
+    @user.update(archive: true)
+    # redirect_to company_path(@project.company)
+    flash.alert = "Membre Supprimé"
     redirect_to users_path
   end
 

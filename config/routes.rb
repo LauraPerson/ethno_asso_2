@@ -13,7 +13,11 @@ Rails.application.routes.draw do
   end
   resources :ressources
   resources :dashboard, :controller => 'users'
-  resources :users, only: [:index, :destroy]
+  resources :users, only: [:index, :destroy] do 
+    member do 
+      patch 'archive'
+    end
+  end
 
 
 end

@@ -24,4 +24,8 @@ class UserPolicy < ApplicationPolicy
   def create?
     user.super_admin?
   end
+
+  def destroy?
+    user.super_admin?
+  end
 end

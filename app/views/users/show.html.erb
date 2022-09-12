@@ -10,24 +10,26 @@
     <% end %>
   </div>
   <p><%= @user.description %></p>
-  <div class="flex-center">
-    <%= link_to new_article_path, class:"btn-primary m-1" do %>
-        Ajouter un projet
-    <% end %>
-    <%= link_to new_ressource_path, class:"btn-primary m-1" do %>
-        Ajouter une ressource
-    <% end %>
-    <% if @user.super_admin == true %>
-      <div class="d-flex m-1">
-        <%= link_to new_dashboard_path, class:"btn-primary mx-1" do %>
-            Ajouter un membre
-        <% end %>
-        <%= link_to users_path, class:"btn-secondary mx-1" do %>
-            Supprimer un membre
-        <% end %>
-      </div>
-    <% end %>
-  </div>
+  <% if current_user.id.to_s == params[:id] %>
+    <div class="flex-center">
+      <%= link_to new_article_path, class:"btn-primary m-1" do %>
+          Ajouter un projet
+      <% end %>
+      <%= link_to new_ressource_path, class:"btn-primary m-1" do %>
+          Ajouter une ressource
+      <% end %>
+      <% if @user.super_admin == true %>
+        <div class="d-flex m-1">
+          <%= link_to new_dashboard_path, class:"btn-primary mx-1" do %>
+              Ajouter un membre
+          <% end %>
+          <%= link_to users_path, class:"btn-secondary mx-1" do %>
+              Voir les membres
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 
 
 

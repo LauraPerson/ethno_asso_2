@@ -60,7 +60,6 @@ class ArticlesController < ApplicationController
     # redirect_to company_path(@project.company)
     flash.alert = "Projet archivé"
     redirect_to article_path(@article)
-
   end
 
 
