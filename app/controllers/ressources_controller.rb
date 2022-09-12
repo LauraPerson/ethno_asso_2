@@ -50,10 +50,19 @@ class RessourcesController < ApplicationController
 
   def update
     @ressource = Ressource.find(params[:id])
+    if @ressource.update(ressource_params.reject { |k| k["photos"] })
+      if ressource_params[:photos].present?
+        ressource_params[:photos].each do |photo|
+          @ressource.photos.attach(photo)
+        end
+      end
+      flash.alert = "Ressource Modifiée"
+      redirect_to ressources_path(@ressource)
+    else
+      flash.alert = "Ressource non modifiée"
+      redirect_to ressources_path
+    end
     authorize @ressource
-    photos = @ressource.photos
-    @ressource.update(ressource_params)
-    redirect_to ressource_path(@ressource)
   end
 
   private 

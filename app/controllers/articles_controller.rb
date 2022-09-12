@@ -40,10 +40,19 @@ class ArticlesController < ApplicationController
 
   def update
     @article = Article.find(params[:id])
+    if @article.update(article_params.reject { |k| k["photos"] })
+      if article_params[:photos].present?
+        article_params[:photos].each do |photo|
+          @article.photos.attach(photo)
+        end
+      end
+      flash.alert = "Projet Modifié"
+      redirect_to articles_path(@article)
+    else
+      flash.alert = "Projet non modifié"
+      redirect_to articles_path
+    end
     authorize @article
-    photos = @article.photos
-    @article.update(article_params)
-    redirect_to article_path(@article)
   end
 
   def archive
