@@ -30,6 +30,8 @@
 .card-article {
   border: 2px solid transparent;
   box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .card-article:hover {
@@ -47,6 +49,7 @@
   border: 2px solid transparent;
   height: 450px;
   overflow: hidden;
+  border-radius: 10px;
   &:hover {
     border: 2px solid $primary;
   }

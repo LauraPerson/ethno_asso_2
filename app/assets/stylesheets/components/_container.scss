@@ -66,11 +66,43 @@
 }
 
 @media (max-width: 768px) {
-
+  .article-container {
+    display: grid;
+    padding: 10px;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    width: 100%;
+    > div {
+      height: 60vh;
+      padding: 20px;
+      margin: 0px;
+      width: 100%;
+      p {
+        display: block;
+      }
+    }
+  }
 }
 
 @media (max-width: 480px) {
   .container {
     width: 90vw;
+  }
+
+  .article-container {
+    display: grid;
+    padding: 10px;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    width: 100%;
+    > div {
+      height: 60vh;
+      padding: 20px;
+      margin: 0px;
+      width: 100%;
+      p {
+        display: block;
+      }
+    }
   }
 }

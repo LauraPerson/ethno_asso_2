@@ -38,3 +38,43 @@
   position: relative;
   background-position: center;
 }
+
+
+@media (max-width: 1224px) {
+}
+
+@media (max-width: 1024px) {
+  .avatar-big {
+    overflow: hidden;
+    img {
+      object-fit: cover;
+      object-position: center;
+      width: 150px;
+      height: 150px;
+   }
+  }
+}
+@media (max-width: 768px) {
+  .avatar-big {
+    overflow: hidden;
+    img {
+      object-fit: cover;
+      object-position: center;
+      width: 100px;
+      height: 100px;
+   }
+  }
+}
+@media (max-width: 480px) {
+
+  .avatar-big {
+    overflow: hidden;
+    img {
+      object-fit: cover;
+      object-position: center;
+      width: 100px;
+      height: 100px;
+   }
+  }
+  
+}
