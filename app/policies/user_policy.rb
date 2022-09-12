@@ -5,6 +5,10 @@ class UserPolicy < ApplicationPolicy
     end
   end
 
+  def index?
+    user.super_admin?
+  end
+
   def show?
     true
   end
@@ -18,6 +22,10 @@ class UserPolicy < ApplicationPolicy
   end
 
   def create?
+    user.super_admin?
+  end
+
+  def destroy?
     user.super_admin?
   end
 end

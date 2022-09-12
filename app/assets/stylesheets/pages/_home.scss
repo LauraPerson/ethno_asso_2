@@ -1,4 +1,5 @@
 
+
 .banner-top {
   height: calc(100vh - 160px);
   display: flex;
@@ -19,7 +20,7 @@
   background-color: white;
 }
 
-.about {
+#about {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,6 +34,17 @@
   }
 }
 
+#presentation {
+  align-items: center;
+  justify-content: center;
+  > img {
+    width: 20%;
+  }
+  .about-text {
+    width: 50%;
+    margin: 30px auto;
+  }
+}
 #team {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;

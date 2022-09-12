@@ -13,5 +13,14 @@ Rails.application.routes.draw do
   end
   resources :ressources
   resources :dashboard, :controller => 'users'
+  resources :users, only: [:index, :destroy] do 
+    member do 
+      patch 'archive'
+    end
+  end
+
+  resources :contacts, only: [:new, :create]
+
+
 
 end

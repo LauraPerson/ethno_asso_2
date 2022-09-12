@@ -51,6 +51,11 @@ gem "pundit"
 gem "dotenv-rails", groups: [:development, :test]
 gem "cloudinary"
 
+#  pour les mails
+gem 'mail_form'
+
+
+
 # gem "ruby-vips"
 
 gem "devise"
