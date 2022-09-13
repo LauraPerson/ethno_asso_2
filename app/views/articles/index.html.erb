@@ -1,26 +1,30 @@
-<div class="container">
-  <h1>Nos projets</h1>
-  <div class="card-grid" id="card-grid-article">
-    <% @unarchived_articles.each do |article| %>
-      <%= link_to article_path(article) do %>
-        <div class="card-article card d-flex">
-          <div class="card-article-content justify-content-between">
-            <div class="d-flex flex-column justify-content-between p-2">
-              <div>
-                <h3><%= article.title %></h3>
-                <p><%= short_content(article) %></p>
+<div class="container-article">
+  <div class="container ">
+    <div class="d-flex my-3"><%= image_tag "star.png", width: "60px", height:"60px", class:"mx-2" %><h2 class="my-3">Nos projets</h2></div>
+    <div class="card-grid" id="card-grid-article">
+      <% @unarchived_articles.each do |article| %>
+        <%= link_to article_path(article) do %>
+          <div class="card-article card d-flex">
+            <div class="card-article-content justify-content-between">
+              <div class="d-flex flex-column justify-content-between p-2">
+                <div>
+                  <h3><%= article.title %></h3>
+                  <p><%= short_content(article) %></p>
+                </div>
+                <div class="text-grey">  Publié par <%= article.user.name %> le <%= date(article) %> </div>
               </div>
-              <div class="text-grey">  Publié par <%= article.user.name %> le <%= date(article) %> </div>
+              <div class="card-article-img">
+                <%= photo(article) %>
+              </div>
             </div>
-            <div class="card-article-img">
-              <%= photo(article) %>
-            </div>
-          </div>
 
-        </div>
+          </div>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
+</div>
+<div class="container">
   <div data-controller="archive">
     <div class="d-flex my-4 align-items-center">
       <h1 class="">Projets Archivés</h1>
@@ -49,7 +53,7 @@
       <% end %>
     </div>
   </div>
-
 </div>
+
 
 
