@@ -9,9 +9,8 @@ class PagesController < ApplicationController
       end
     end
     @last_articles_with_photos = @articles_with_photo.sort_by{|e| e[:created_at]}.last(3)
-    
-    @team = User.all.where(admin: true)
-
+    @unarchived_team = User.all.where(archive: false)
+    @team = @unarchived_team.all.where(admin: true)
   end
 
   def about

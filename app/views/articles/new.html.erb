@@ -3,6 +3,6 @@
     <%= f.input :title, label:"Titre" %>
     <%= f.input :content, as: :rich_text_area, label:"Contenu" %>
     <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Ajouter des images" %>
-    <%= f.submit class:"btn-primary" %>
+    <%= f.submit "Ajouter le projet", class:"btn-primary" %>
   <% end %>
 </div>

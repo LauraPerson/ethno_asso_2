@@ -1,6 +1,19 @@
 .card-grid {
   display: grid;
   grid-gap: 16px;
+
+  padding: 20px 50px;
+  border-bottom: 5px solid $secondary;
+
+}
+
+
+.container-article {
+  background-image: url("line5.png");
+  background-repeat: no-repeat;
+  width: 100vw;
+  background-size: contain;
+  background-position: top;
 }
 
 .card-gnl {
@@ -51,7 +64,7 @@
   overflow: hidden;
   border-radius: 10px;
   &:hover {
-    border: 2px solid $primary;
+    border: 2px solid $secondary;
   }
   
 }
