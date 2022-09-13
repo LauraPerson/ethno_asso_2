@@ -15,6 +15,10 @@ export default class extends Controller {
       this.dropdownTarget.classList.remove("display-none")
       this.dropdownTarget.classList.add("display")
       this.buttonTarget.innerText= "Cacher les projets archivés"
+      this.scrollTo({
+        top: 500,
+        behavior: 'smooth'
+      });
     } else {
       this.dropdownTarget.classList.remove("display")
       this.buttonTarget.innerText= "Voir les projets archivés?"
