@@ -13,13 +13,35 @@
 }
 
 .banner-center {
-  background-color: white;
+  // background-color: white;
   border-radius: 10px;
+  text-align: center;
 }
 
-.banner-bottom {
-  background-color: white;
-  border-radius: 10px;
+
+.bottom-container {
+  position: relative;
+  width: 100vw;
+  height: 150vh;
+  .bottom-image {
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    object-fit: cover;
+    z-index: -1;
+    height: 100%;
+  }
+}
+
+#container-article-title {
+  // position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #about {
@@ -27,7 +49,7 @@
   align-items: center;
   justify-content: center;
   padding-left: 30px;
-  text-align: justify;
+  // text-align: justify;
   > img {
     width: 20%;
   }
@@ -103,6 +125,10 @@
     #member-name {
       display: block;
     }
+  }
+
+  .bottom-image {
+    display: none;
   }
   
 }
