@@ -74,9 +74,17 @@
     display: none;
   }
 
+  .logo-xs {
+    display: none;
+  }
+
 }
 
 @media (max-width: 1224px) {
+
+  .logo-xs {
+    display: none;
+  }
   #dropdown-hamburger {
     display: none;
   }
@@ -86,6 +94,10 @@
 @media (max-width: 1024px) {
 
   #dropdown-hamburger {
+    display: none;
+  }
+
+  .logo-xs {
     display: none;
   }
 
@@ -124,6 +136,10 @@
   }
   #btn-logout {
     padding: 0px;
+  }
+
+  .logo-xs {
+    display: none;
   }
 }
 
@@ -165,4 +181,16 @@
   #btn-logout {
     padding: 0px;
   }
+
+
+  #logo img {
+    display: none;
+  }
+
+
+  .logo-xs {
+    display: block;
+  }
+
+
 }

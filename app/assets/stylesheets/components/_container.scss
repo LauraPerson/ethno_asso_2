@@ -3,6 +3,11 @@
   margin: 20px auto;
 }
 
+.container-80 {
+  width: 80vw;
+  margin: 0 auto;
+}
+
 .container-form {
   margin: 0 auto;
   display: flex;
@@ -27,6 +32,22 @@
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.container-article {
+  background-image: url("line5.png");
+  background-repeat: no-repeat;
+  width: 100vw;
+  background-size: contain;
+  background-position: top;
+}
+
+.container-ressources {
+  background-image: url("line2.png");
+  background-repeat: no-repeat;
+  width: 100vw;
+  background-size: contain;
+  background-position: top;
 }
 
 .article-container {
