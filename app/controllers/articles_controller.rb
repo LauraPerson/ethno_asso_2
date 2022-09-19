@@ -8,6 +8,12 @@ class ArticlesController < ApplicationController
     @articles = Article.order(created_at: :desc)
     @unarchived_articles = @articles.where(archive: false)
     @archived_articles = @articles.where(archive: true)
+
+    if params[:query].present?
+      @filtered_articles = @unarchived_articles.where(filter: params[:query])
+    else 
+      @filtered_articles = @unarchived_articles
+    end
   end
 
   def show 
@@ -74,7 +80,7 @@ class ArticlesController < ApplicationController
   private 
 
   def article_params 
-    params.require(:article).permit(:title, :content, :archive, photos: [] )
+    params.require(:article).permit(:title, :content, :archive, :filter, photos: [] )
   end 
 
   def find_article

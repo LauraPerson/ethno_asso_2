@@ -40,6 +40,27 @@
   transition: border 0.1s .2s;
 }
 
+
+.filter-button {
+  width: 200px;
+  border-radius: 10px;
+  border: 1px solid $secondary;
+  height: 50px;
+  color: $secondary;
+  background-color: transparent;
+  box-shadow: 1px 1px 30px rgba(0, 0, 0, 0.3);
+}
+
+.filter-button:hover {
+  color: white;
+  background-color: $secondary;
+}
+
+#Éducation {
+  background-image: url(education.png);
+
+}
+
 @media (max-width: 768px) {
 
   #btn-logout {

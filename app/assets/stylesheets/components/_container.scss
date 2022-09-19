@@ -41,11 +41,11 @@
 }
 
 .container-article {
-  background-image: url("line5.png");
-  background-repeat: no-repeat;
+  // background-image: url("line5.png");
+  // background-repeat: no-repeat;
   width: 100vw;
-  background-size: contain;
-  background-position: top;
+  // background-size: contain;
+  // background-position: top;
 }
 
 .container-ressources {
@@ -79,6 +79,11 @@
 
     }
   }
+}
+
+.filter-container {
+  display: flex;
+
 }
 
 @media (min-width: 1224px) {

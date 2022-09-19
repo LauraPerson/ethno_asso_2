@@ -2,6 +2,7 @@
   <%= simple_form_for((@article), data: {turbo: false}) do |f| %>
     <%= f.input :title, label:"Titre" %>
     <%= f.input :content, as: :rich_text_area, label:"Contenu" %>
+    <%= f.input :filter, as: :select, collection: Article::FILTERS %>
     <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Ajouter des images" %>
     <%= f.submit "Ajouter le projet", class:"btn-primary" %>
   <% end %>
