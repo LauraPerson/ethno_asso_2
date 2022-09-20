@@ -1,2 +1,17 @@
-<h1>Partners#index</h1>
-<p>Find me in app/views/partners/index.html.erb</p>
+
+<div class="container-partners">
+  <div class="container">
+    <div class="d-flex my-3"><%= image_tag "star.png", width: "60px", height:"60px", class:"mx-2" %><h2 class="my-3">Nos partenaires</h2></div>
+    <div class="card-grid" id="card-grid-partner">
+      <% @partners.each do |partner| %>
+        <div class="card-partner">
+          <div class="card-partner-img">
+            <%= unique_photo(partner) %>
+          </div>
+          <h3><%= partner.name %></h3>
+        </div>
+      <% end %>
+    </div>
+
+  </div>
+</div>

@@ -16,6 +16,14 @@ module ApplicationHelper
     end
   end
 
+  def unique_photo(element)
+    if element.photo.attached?
+      cl_image_tag element.photo.key
+    else
+      image_tag "default.png"
+    end
+  end
+
   def short_content(element)
     element.content.present?
     content = element.content.to_plain_text[0, 300]
