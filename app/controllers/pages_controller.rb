@@ -13,13 +13,9 @@ class PagesController < ApplicationController
     @last_articles_with_photos = @articles_with_photo.sort_by{|e| e[:created_at]}.last(3)
     @unarchived_team = User.all.where(archive: false)
     @team = @unarchived_team.all.where(admin: true)
+    @board = @unarchived_team.all.where(admin: false)
 
 
-    @ethnography_projects = @unarchived_articles.where(filter: "Ethnographie urbaine")
-    @discrimination_projects = @unarchived_articles.where(filter: "Discriminations")
-    @ecology_projects = @unarchived_articles.where(filter: "Écologie")
-
-    
   end
 
   def about

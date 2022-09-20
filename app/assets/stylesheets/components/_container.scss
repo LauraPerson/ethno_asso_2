@@ -1,5 +1,5 @@
 .container-global {
-  min-height: 50vh;
+  min-height: 80vh;
 }
 
 .container {
@@ -102,8 +102,6 @@
 .filter-container {
   display: flex;
   justify-content: space-around;
-
-
 }
 
 @media (min-width: 1224px) {
@@ -161,4 +159,10 @@
   .container-search {
     display: block;
   }
+
+  .filter-container {
+    display: block;
+    margin: 0 auto;
+  }
+  
 }
