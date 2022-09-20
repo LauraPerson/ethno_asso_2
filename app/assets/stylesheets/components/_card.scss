@@ -35,6 +35,9 @@
   box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   overflow: hidden;
+  h3 {
+    color: $secondary;
+  }
 }
 
 .card-article:hover {

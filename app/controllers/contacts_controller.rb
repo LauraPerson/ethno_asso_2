@@ -10,6 +10,7 @@ class ContactsController < ApplicationController
     @contact.request = request
     if @contact.deliver
       flash.alert = "Message Envoyé"
+      redirect_to root_path
     else
       flash.alert = "Message non Envoyé"
       render :new

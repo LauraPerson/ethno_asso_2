@@ -10,7 +10,11 @@
               params[:query],
               class: "form-control d-none", 
               value: filter %>
-            <%= submit_tag filter, class: "mx-2 filter-button" %>
+              <%= button_tag filter, class: "mx-2 filter-button" do %>
+                <div  class="filter-bg <%= filter %>">
+                  <%= filter %>
+                </div>
+              <% end %>
           <% end %>
         <% end %>
       </div>
