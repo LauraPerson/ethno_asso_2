@@ -51,6 +51,7 @@
   font-size: 26px;
   font-family: 'Ubuntu', sans-serif;;
   padding: 10px;
+  font-weight: lighter;
 }
 
 
@@ -63,11 +64,15 @@
   border: 1px solid $secondary;
   height: 200px;
   background-position: bottom;
+  color: $secondary;
+  background-color: transparent;
   &:hover {
     color: white;
     background-color: $secondary;
   }
 }
+
+
 
 .Ethnographie {
   background-image: url('buildings.png');
@@ -79,6 +84,13 @@
 
 .Écologie {
   background-image: url('plant.png');
+}
+
+.filter-all {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 

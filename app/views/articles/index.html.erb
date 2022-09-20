@@ -3,7 +3,7 @@
     <div class="d-flex my-3"><%= image_tag "star.png", width: "60px", height:"60px", class:"mx-2" %><h2 class="my-3">Nos projets</h2>
     </div>
     <div class="card-grid" id="card-grid-article">
-      <div class="filter-container">
+      <div class="filter-container" data-controller="filter">
         <% Article::FILTERS.each do |filter| %>
           <%= form_tag articles_path, method: :get, class: "d-flex" do %>
             <%= text_field_tag :query,
@@ -11,11 +11,24 @@
               class: "form-control d-none", 
               value: filter %>
               <%= button_tag filter, class: "mx-2 filter-button" do %>
-                <div  class="filter-bg <%= filter %>">
+                <div  class="filter-bg <%= filter %> filter-unactive" 
+                      data-filter-target="button"
+                      data-action="click->filter#active"
+                      >
                   <%= filter %>
                 </div>
               <% end %>
           <% end %>
+        <% end %>
+        <%= link_to articles_path do %>
+          <div class="filter-button">
+            <div class="mx-2 filter-bg filter-all filter-unactive"
+            data-filter-target="button"
+            <%# data-action="click->filter#active" %>
+            >
+            Tous <br>nos <br>projets
+            </div>
+          </div>
         <% end %>
       </div>
       <%= params[:query] ? "#{@filtered_articles.length} résultats pour la recherche '#{params[:query]}'" : "Tous les résultats"  %>

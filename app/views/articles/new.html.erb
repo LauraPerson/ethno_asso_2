@@ -1,4 +1,8 @@
 <div class="container">
+  <div class="d-flex justify-content-between border-bottom my-4">
+    <h3 class="d-none-xs">Tableau de bord</h3>
+    <h3>Ajouter un projet</h3>
+  </div>
   <%= simple_form_for((@article), data: {turbo: false}) do |f| %>
     <%= f.input :title, label:"Titre" %>
     <%= f.input :content, as: :rich_text_area, label:"Contenu" %>

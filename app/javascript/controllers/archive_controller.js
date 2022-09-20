@@ -5,9 +5,6 @@ export default class extends Controller {
 
   static targets = ["dropdown", "button"]
 
-  connect() {
-    console.log("Test")
-  }
   openArchive(e) {
     e.preventDefault()
     console.log(this.buttonTarget.innerHtml)
