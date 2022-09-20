@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'partners/new'
+  get 'partners/index'
   devise_for :users
   root to: "pages#home"
 
@@ -11,6 +13,7 @@ Rails.application.routes.draw do
       patch 'archive'
     end
   end
+  resources :partners
   resources :ressources
   resources :dashboard, :controller => 'users'
   resources :users, only: [:index, :destroy] do 

@@ -8,8 +8,10 @@
     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
       <li><%= link_to "À propos de nous", root_path %></li>
       <li><%= link_to "Nos projets", articles_path %></li>
-      <li><%= link_to "Nos Ressources", ressources_path %></li>
-      <li><%= link_to "Soutenez-nous!", support_path %></li>
+      <li><%= link_to "Nos partenaires", partners_path %></li>
+
+      <%# <li><%= link_to "Nos Ressources", ressources_path</li> %>
+      <%# <li><%= link_to "Soutenez-nous!", support_path</li> %>
       <li><%= link_to "Contact", contact_path %></li>
       <% if user_signed_in? %>
         <div class="border-top bg-light">
@@ -26,8 +28,9 @@
   <div class="align-items-center" id="navbar-items">
     <%= link_to "À propos de nous", root_path, class:"underline-hover"  %>
     <%= link_to "Nos projets", articles_path, class:"underline-hover"  %>
-    <%= link_to "Nos Ressources", ressources_path, class:"underline-hover"%>
-    <%= link_to "Soutenez-nous!", support_path, class:"underline-hover"  %>
+    <%# <%= link_to "Nos Ressources", ressources_path, class:"underline-hover"%> 
+    <%# <%= link_to "Soutenez-nous!", support_path, class:"underline-hover"  %>
+    <%= link_to "Nos partenaires", partners_path, class:"underline-hover" %>
     <%= link_to "Contact", contact_path, class:"underline-hover"  %>
     <div class="dropdown-container" data-controller="dropdown">
       <% if current_user %>

@@ -67,10 +67,12 @@ a {
 h1, h2, h3 {
   font-family: $title;
   font-weight: lighter;
+  color: $secondary;
 }
 
 p {
   font-family: $text;
+  margin: 0;
 }
 
 

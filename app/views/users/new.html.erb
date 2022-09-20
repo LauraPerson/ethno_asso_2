@@ -1,7 +1,10 @@
 <div class="container">
+  <div class="d-flex justify-content-between border-bottom my-4">
+    <h3 class="d-none-xs">Tableau de bord</h3>
+    <h3>Ajouter un membre</h3>
+  </div>
   <div class="row flex-center">
     <div class="col-12 col-m-6 col-xl-4 my-4">
-      <h2>Ajouter un nouvel utilisateur</h2>
       <%= simple_form_for @user, url: dashboard_index_path(@user), method: :post do |f| %>
         <%= f.input :email, label:"Email"  %>
         <%= f.input :password, label:"Mot de Passe" %>
@@ -9,7 +12,7 @@
         <%= f.input :last_name, label:"Nom"  %>
         <%= f.input :description, label:"Fonction au sein d'Ethno"  %>
         <%= f.input :photo, as: :file, label:"Photo de profil"  %>
-        <%= f.input :admin, as: :boolean, label:"Membre administrateur?"  %>
+        <%= f.input :admin, as: :boolean, label:"Membre permanent?"  %>
         <%= f.submit "Ajouter un membre", class:"btn-primary" %>
       <% end %>
     </div>

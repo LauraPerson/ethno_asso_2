@@ -5,9 +5,7 @@ export default class extends Controller {
 
   static targets = ["dropdown"]
 
-  connect() {
-    console.log("Test")
-  }
+ 
   openDropdown(e) {
     e.preventDefault()
     if (this.dropdownTarget.className == "navbar-dropdown display-none") {
