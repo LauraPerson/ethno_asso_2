@@ -12,6 +12,20 @@
   margin: 0 auto;
 }
 
+.projects-container-home {
+  .projects-card {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  i {
+    font-size: 30px;
+  }
+  .projects-card:hover {
+    transition: transform .65s cubic-bezier(.05,0.2,.1,1);
+  }
+}
+
 .container-form {
   margin: 0 auto;
   display: flex;

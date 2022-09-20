@@ -3,5 +3,5 @@ class Article < ApplicationRecord
   has_many_attached :photos
   has_rich_text :content
 
-  FILTERS = ["Éducation", "Recherche", "Communication"]
+  FILTERS = ["Ethnographie urbaine", "Discriminations", "Écologie"]
 end
