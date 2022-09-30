@@ -132,7 +132,17 @@
   #board {
     grid-template-columns: 1fr 1fr 1fr;
   }
+
+  .bottom-container {
+    background-image: none;
+  }
+  .empty-banner {
+    display: none;
+  }
+
 }
+
+
 @media (max-width: 480px) {
   .banner-top {
     background-size: cover;

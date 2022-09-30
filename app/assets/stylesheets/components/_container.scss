@@ -89,7 +89,7 @@
   > div {
     background: -webkit-gradient(linear, left bottom, left top, from(rgba(0,0,0,0.2)), to(rgba(0,0,0,0)));
     flex-grow: 1;
-    height: 60vh;
+    height: 50vh;
     background-size: cover;
     background-position: center;
     border-radius: 10px;
@@ -99,7 +99,7 @@
     padding: 30px 20px;
     background-color: white;
     margin: 20px;
-    width: 350px;
+    width: 250px;
     p {
       background-color: white;
       padding: 5px;
@@ -114,9 +114,23 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-@media (min-width: 1224px) {
+@media (min-width: 1501px) {
+
+  .article-container {  
+    > div {
+      width: 500px;
+    }
+  }
+}
 
 
+@media (max-width: 1500px) {
+
+  .article-container {  
+    > div {
+      width: 350px;
+    }
+  }
 }
 
 @media (max-width: 1024px) {

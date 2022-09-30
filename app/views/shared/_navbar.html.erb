@@ -25,7 +25,7 @@
 
   <%# hamburger jusqu'ici %>
 
-    <div id="logo" <%= params[:controller] == "pages" ? "class=controller-pages" : "class=nada" %>>
+    <div id="logo" <%= params[:controller] == "pages" ? "class=logo-on-controller-pages" : "class=logo-on-other-pages" %>>
       <%= link_to image_tag("logo.png", height: 80), root_path%>
     </div>
   <div class="align-items-center" id="navbar-items">
