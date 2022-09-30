@@ -1,6 +1,6 @@
 <div class="navbar-ethno">
 
-<%# affichage hamburger si screen size == smartphone %>
+  <%# affichage hamburger si screen size == smartphone %>
   <div class="dropdown" id="dropdown-hamburger">
     <button class="btn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
       <i class="fa-solid fa-bars"></i>
@@ -11,7 +11,7 @@
       <li><%= link_to "Nos partenaires", partners_path %></li>
 
       <%# <li><%= link_to "Nos Ressources", ressources_path</li> %>
-      <%# <li><%= link_to "Soutenez-nous!", support_path</li> %>
+      <li><%= link_to "Soutenez-nous!", support_path %></li> 
       <li><%= link_to "Contact", contact_path %></li>
       <% if user_signed_in? %>
         <div class="border-top bg-light">
@@ -22,14 +22,17 @@
 
     </ul>
   </div>
-    <div id="logo">
+
+  <%# hamburger jusqu'ici %>
+
+    <div id="logo" <%= params[:controller] == "pages" ? "class=logo-on-controller-pages" : "class=logo-on-other-pages" %>>
       <%= link_to image_tag("logo.png", height: 80), root_path%>
     </div>
   <div class="align-items-center" id="navbar-items">
     <%= link_to "À propos de nous", root_path, class:"underline-hover"  %>
     <%= link_to "Nos projets", articles_path, class:"underline-hover"  %>
     <%# <%= link_to "Nos Ressources", ressources_path, class:"underline-hover"%> 
-    <%# <%= link_to "Soutenez-nous!", support_path, class:"underline-hover"  %>
+    <%= link_to "Soutenez-nous!", support_path, class:"underline-hover"  %>
     <%= link_to "Nos partenaires", partners_path, class:"underline-hover" %>
     <%= link_to "Contact", contact_path, class:"underline-hover"  %>
     <div class="dropdown-container" data-controller="dropdown">

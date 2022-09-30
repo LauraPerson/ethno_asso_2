@@ -1,36 +1,40 @@
 <div class="container-article">
   <div class="container ">
-    <div class="d-flex my-3"><%= image_tag "star.png", width: "60px", height:"60px", class:"mx-2" %><h2 class="my-3">Nos projets</h2>
-    </div>
-    <div class="card-grid" id="card-grid-article">
+    <div class="filter-title-container">
+      <div class="d-flex"><%= image_tag "star.png", width: "60px", height:"60px", class:"mx-2" %><h2 class="my-3">Nos projets</h2>
+      </div>
       <div class="filter-container" data-controller="filter">
         <% Article::FILTERS.each do |filter| %>
-          <%= form_tag articles_path, method: :get, class: "d-flex" do %>
+          <%= form_tag articles_path, method: :get, class: "form-button" do %>
             <%= text_field_tag :query,
               params[:query],
               class: "form-control d-none", 
               value: filter %>
-              <%= button_tag filter, class: "mx-2 filter-button" do %>
-                <div  class="filter-bg <%= filter %> filter-unactive" 
-                      data-filter-target="button"
-                      data-action="click->filter#active"
-                      >
-                  <%= filter %>
-                </div>
-              <% end %>
+            <%= button_tag filter, class: "mx-2 filter-button" do %>
+              <div  class="filter-bg <%= filter %> filter-unactive" 
+                    data-filter-target="button"
+                    data-action="click->filter#active"
+                    >
+              </div>
+            <% end %>
+            <p class="filter-title"> <%= filter %> </p>
           <% end %>
         <% end %>
-        <%= link_to articles_path do %>
+        <%= link_to articles_path, class:"form-button" do %>
           <div class="filter-button">
             <div class="mx-2 filter-bg filter-all filter-unactive"
             data-filter-target="button"
             <%# data-action="click->filter#active" %>
             >
-            Tous <br>nos <br>projets
             </div>
           </div>
+          <p class="filter-title">Tous nos projets</p>
         <% end %>
       </div>
+    </div>
+    <div class="card-grid" id="card-grid-article">
+
+
       <%= params[:query] ? "#{@filtered_articles.length} résultats pour la recherche '#{params[:query]}'" : "Tous les résultats"  %>
       <% @filtered_articles.each do |article| %>
         <%= link_to article_path(article) do %>

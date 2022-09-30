@@ -1,10 +1,14 @@
 .footer-container {
+  padding: 10px 20px;
+  width: 100vw;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  height: 120px;
+  justify-content: space-between;
   background-color: rgba($secondary, 0.5);
-  padding: 10px 0px;
+  img {
+    width: 100px;
+    object-fit: contain;
+  }
 }
 .contact-details {
   margin: 0;

@@ -17,6 +17,10 @@
   padding: 12px;
 }
 
+.logo-on-controller-pages {
+  display: block;
+}
+
 #navbar-items {
   display: flex;
 }
@@ -192,5 +196,10 @@
     display: block;
   }
 
+
+  .logo-on-controller-pages {
+    display: none;
+  }
+  
 
 }
