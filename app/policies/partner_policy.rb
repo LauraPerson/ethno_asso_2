@@ -6,7 +6,7 @@ class PartnerPolicy < ApplicationPolicy
   end
 
   def create?
-    user.admin?
+    user.super_admin?
   end
 
   def index?
