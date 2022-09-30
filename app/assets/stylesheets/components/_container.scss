@@ -1,5 +1,5 @@
-.container-global {
-  min-height: 80vh;
+.content-wrapper {
+  min-height: calc(100vh - 160px - 120px);
 }
 
 .container {
@@ -66,6 +66,10 @@
   // background-position: top;
 }
 
+.filter-title-container {
+  // background-image: url('shape1.png');
+}
+
 .container-ressources {
   background-image: url("line2.png");
   background-repeat: no-repeat;
@@ -105,8 +109,9 @@
 }
 
 .filter-container {
-  display: flex;
+  display: grid;
   justify-content: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 @media (min-width: 1224px) {
@@ -164,10 +169,9 @@
   .container-search {
     display: block;
   }
-
+  
   .filter-container {
-    display: block;
-    margin: 0 auto;
+    display: none;
   }
   
 }

@@ -50,26 +50,32 @@
   border: none;
   font-size: 26px;
   font-family: 'Ubuntu', sans-serif;;
-  padding: 10px;
   font-weight: lighter;
 }
 
 
 .filter-bg {
-  box-shadow: 1px 1px 30px rgba(0, 0, 0, 0.3);
+  // box-shadow: 1px 1px 30px rgba(0, 0, 0, 0.3);
   background-size: 60%;
   background-repeat: no-repeat;
-  width: 200px;
+  width: 160px;
   border-radius: 10px;
-  border: 1px solid $secondary;
-  height: 200px;
+  // border: 1px solid $secondary;
+  height: 140px;
   background-position: bottom;
   color: $secondary;
   background-color: transparent;
   &:hover {
     color: white;
-    background-color: $secondary;
+    // background-color: $secondary;
   }
+}
+
+.form-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $secondary;
 }
 
 
@@ -79,14 +85,15 @@
 }
 
 .Discriminations {
-  background-image: url('together.png');
+  background-image: url('racism.png');
 }
 
 .Écologie {
-  background-image: url('plant.png');
+  background-image: url('ecology.png');
 }
 
 .filter-all {
+  background-image: url('all.png');
   display: flex;
   align-items: center;
   justify-content: center;
