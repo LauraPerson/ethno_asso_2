@@ -7,6 +7,11 @@
   transition: opacity 2s;
 }
 
+.form-button:active .filter-title {
+  opacity: 1;
+  transition: opacity 2s;
+}
+
 .form-button:hover .filter-bg {
   background-size: 80%;
   transition: background-size 1s;
