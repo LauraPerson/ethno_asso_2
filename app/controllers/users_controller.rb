@@ -18,6 +18,8 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    @user.admin = true
+    @user.super_admin = true
     authorize @user
     @user.save 
     flash.alert = "Nouveau membre ajouté(e)"
