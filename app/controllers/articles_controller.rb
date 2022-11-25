@@ -63,7 +63,6 @@ class ArticlesController < ApplicationController
 
   def archive
     @article.update(archive: true)
-    # redirect_to company_path(@project.company)
     flash.alert = "Projet archivé"
     redirect_to article_path(@article)
   end
