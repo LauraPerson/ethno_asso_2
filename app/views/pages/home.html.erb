@@ -35,14 +35,15 @@
     <% end %>
   </div>
 
-  <div class="d-flex my-3"><%= image_tag "star.png", width: "60px", height:"60px" %><h3 class="m-3">Nos autres membres</h3></div>
+  <div class="d-flex my-3"><%= image_tag "star.png", width: "60px", height:"60px" %><h3 class="m-3">Conseil d'Administration</h3></div>
   <div class="my-3"  id="board">
     <% @board.each do |member| %>
       <div class="d-flex flex-column align-items-center">
         <div class="avatar avatar-medium" id="avatar-dash">
           <%= avatar(member) %>
         </div>
-        <p id="member-name"><%= member.name %></p>
+        <p id="member-name"> <strong><%= member.name %></strong> </p>
+        <p><%= member.description %></p>
       </div>
     <% end %>
   </div>
