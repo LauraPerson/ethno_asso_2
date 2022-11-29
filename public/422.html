@@ -1,9 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>The change you wanted was rejected (422)</title>
+  <meta charset="utf-8">
+  <title>We're sorry, but something went wrong (500)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
+
+
+  .container-error {
+    padding: 200px;
+  }
+
+  .container-error img {
+      height: 100px;
+      width: auto;
+      object-fit: cover;
+    }
+
+    .container-error h1 {
+      color: #EA4E25;
+      font-size: 20px;
+    }
+
   .rails-default-error-page {
     background-color: #EFEFEF;
     color: #2E2F30;
@@ -32,8 +50,6 @@
   }
 
   .rails-default-error-page h1 {
-    font-size: 100%;
-    color: #730E15;
     line-height: 1.5em;
   }
 
@@ -55,13 +71,13 @@
 </head>
 
 <body class="rails-default-error-page">
-  <!-- This file lives in public/422.html -->
-  <div class="dialog">
+  <!-- This file lives in public/500.html -->
+  <div class="container container-error" >
     <div>
-      <h1>The change you wanted was rejected.</h1>
-      <p>Maybe you tried to change something you didn't have access to.</p>
+      <img src="logo_text.png" alt="">
+      <h1>Nous sommes désolé.e.s, il y a un soucis sur le site.</h1>
+      <p>N'hésitez pas à contacter Ethno directement à l'adresse suivante : www.ethnoclic.net</p>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
   </div>
 </body>
 </html>
