@@ -14,7 +14,17 @@
       <%# <%= image_tag "line2.png", class:"d-none-xs" %> 
       <div class="about-text">
 
-      <%# PRESENTATION %>
+        <div class="d-flex justify-content-center my-3"><%= image_tag "star.png", width: "60px", height:"60px", class:""<h3 class="m-3"><%= @presentation2.name %></h3> %>
+          <% if current_user && current_user.super_admin %>
+            <%= link_to edit_presentation_path(@presentation2) do %>
+              <i class="fa-solid fa-pen-to-square">
+              </i>
+            <% end %>
+          <% end %>
+        </div>
+        <div class="text-center ">
+          <%= @presentation2.content %>
+        </div>
 
       </div>
     </div>
@@ -51,8 +61,17 @@
   <div class="banner my-5">
     <div id="presentation" class="d-flex">
       <div class="about-text ">
- 
-            <%#  TEXTE PRESENTATION %>
+        <div class="d-flex justify-content-center my-3"><%= image_tag "star.png", width: "60px", height:"60px", class:""<h3 class="m-3"><%= @presentation2.name %></h3> %>
+          <% if current_user && current_user.super_admin %>
+            <%= link_to edit_presentation_path(@presentation2) do %>
+              <i class="fa-solid fa-pen-to-square">
+              </i>
+            <% end %>
+          <% end %>
+        </div>
+        <div class="text-center ">
+          <%= @presentation2.content %>
+        </div>
       </div>
     </div>
   </div>
