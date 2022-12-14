@@ -14,7 +14,7 @@
       <%# <%= image_tag "line2.png", class:"d-none-xs" %> 
       <div class="about-text">
         <div class="d-flex justify-content-center"><%= image_tag "star.png", width: "60px", height:"60px" %><h3 class="m-3"><%= @presentation1.name %></h3>
-          <% if current_user.super_admin %>
+          <% if current_user && current_user.super_admin %>
             <%= link_to edit_presentation_path(@presentation1) do %>
               <i class="fa-solid fa-pen-to-square">
               </i>
@@ -60,7 +60,7 @@
     <div id="presentation" class="d-flex">
       <div class="about-text ">
         <div class="d-flex justify-content-center my-3"><%= image_tag "star.png", width: "60px", height:"60px", class:"" %><h3 class="m-3"><%= @presentation2.name %></h3>
-          <% if current_user.super_admin %>
+          <% if current_user && current_user.super_admin %>
             <%= link_to edit_presentation_path(@presentation2) do %>
               <i class="fa-solid fa-pen-to-square">
               </i>
