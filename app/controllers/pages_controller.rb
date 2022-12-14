@@ -15,6 +15,10 @@ class PagesController < ApplicationController
     @unarchived_team = User.where(archive: false)
     @team = @unarchived_team.where(employee: true)
     @board = @unarchived_team.where(employee: false)
+
+    @presentation1 = Presentation.first
+    @presentation2 = Presentation.second
+
   end
 
   def about
