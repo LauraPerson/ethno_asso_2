@@ -5,8 +5,11 @@ export default class extends Controller {
   static targets = ["button"]
 
   active(e) {
-    // e.preventDefault()
+    // console.log("TEST2")
     // console.log(e.currentTarget)
+    // const applied = localStorage.getItem(e.currentTarget) == "true";
+    // e.preventDefault()
+    // console.log(localStorage)
     // e.currentTarget.classList.add("active_background")
   }
 
