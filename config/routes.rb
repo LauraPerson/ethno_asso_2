@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     end
   end
   
+  resources :presentations, only: [:edit, :update]
   resources :partners
   resources :ressources
   resources :dashboard, :controller => 'users'

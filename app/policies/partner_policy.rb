@@ -13,6 +13,14 @@ class PartnerPolicy < ApplicationPolicy
     true
   end
 
+  def edit?
+    true 
+  end 
+
+  def update?
+    edit?
+  end
+
   # def edit?
   #   user.super_admin? || user == record.user
   # end

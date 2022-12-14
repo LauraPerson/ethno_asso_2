@@ -29,6 +29,19 @@ class PartnersController < ApplicationController
     redirect_to partners_path
   end
 
+  def edit
+    @partner = Partner.find(params[:id])
+    authorize @partner
+  end
+
+  def update
+    @partner = Partner.find(params[:id])
+    @partner.update(partner_params)
+    authorize @partner
+    flash.alert = "Partenaire Modifié"
+    redirect_to partners_path
+  end
+
   private
 
   def partner_params 

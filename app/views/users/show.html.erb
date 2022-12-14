@@ -15,9 +15,10 @@
       <%= link_to new_article_path, class:"btn-primary m-1" do %>
           Ajouter un projet
       <% end %>
-      <%= link_to new_ressource_path, class:"btn-primary m-1" do %>
-          Ajouter une ressource
-      <% end %>
+      <%#  J'ai commenté la ligne car pour l'instant Ethn n'utilise pas les resources %>
+      <%# <%= link_to new_ressource_path, class:"btn-primary m-1" do %> 
+          <%# Ajouter une ressource %>
+      <%# <% end %> 
       <% if @user.super_admin == true %>
         <div class="d-flex m-1">
           <%= link_to new_dashboard_path, class:"btn-primary mx-1" do %>
@@ -27,9 +28,14 @@
               Voir les membres
           <% end %>
         </div>
-        <%= link_to new_partner_path, class:"btn-primary m-1" do %>
-            Ajouter un partenaire
-        <% end %>
+        <div class="d-flex m-1">
+          <%= link_to new_partner_path, class:"btn-primary mx-1" do %>
+              Ajouter un partenaire
+          <% end %>
+          <%= link_to partners_path, class:"btn-secondary mx-1" do %>
+              Voir les partenaires
+          <% end %>
+        </div>
       <% end %>
     </div>
   <% end %>
