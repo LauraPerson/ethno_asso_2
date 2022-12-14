@@ -1,5 +1,6 @@
 .filter-title {
   opacity: 0;
+  text-align: center;
 }
 
 .form-button:hover .filter-title {
@@ -15,4 +16,10 @@
 .form-button:hover .filter-bg {
   background-size: 80%;
   transition: background-size 1s;
+}
+
+.filter-title-activated {
+  opacity: 1;
+  transition: opacity 2s;
+  font-size: 18px;
 }

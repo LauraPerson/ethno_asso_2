@@ -24,6 +24,16 @@
 
 #card-grid-article {
   grid-template-columns: 1fr;
+  > p {
+
+  }
+}
+
+#card-grid-article > p {
+  color: grey;
+  font-size: 10px;
+  text-align: right;
+
 }
 
 #card-grid-ressource {

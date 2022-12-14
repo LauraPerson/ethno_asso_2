@@ -11,30 +11,30 @@
               class: "form-control d-none", 
               value: filter %>
             <%= button_tag filter, class: "mx-2 filter-button" do %>
-              <div  class="filter-bg <%= filter %> filter-unactive" 
+              <div  class="filter-bg <%= params[:query] == filter ? "#{filter} active_background filter-title-activated" : filter %>" 
                     data-filter-target="button"
                     data-action="click->filter#active"
                     >
               </div>
             <% end %>
-            <p class="filter-title"> <%= filter %> </p>
+            <p class=" <%= params[:query] == filter ? "filter-title-activated" : "filter-title" %>"> <%= filter %> </p>
           <% end %>
         <% end %>
         <%= link_to articles_path, class:"form-button" do %>
           <div class="filter-button">
-            <div class="mx-2 filter-bg filter-all filter-unactive"
+            <div class="mx-2 filter-all filter-bg <%= params[:query] == nil ? "active_background filter-title-activated" : "" %>"
             data-filter-target="button"
             data-action="click->filter#active">
             </div>
           </div>
-          <p class="filter-title">Tous nos projets</p>
+          <p class=" <%= params[:query] == nil ? "filter-title-activated" : "filter-title" %>"> Tous nos projets</p>
         <% end %>
       </div>
     </div>
     <div class="card-grid" id="card-grid-article">
 
 
-      <%= params[:query] ? "#{@filtered_articles.length} résultats pour la recherche '#{params[:query]}'" : "Tous les résultats"  %>
+      <p class="my-3"> <%= params[:query] ? "#{@filtered_articles.length} résultats pour la recherche '#{params[:query]}'" : "Tous nos projets"  %></p>
       <% @filtered_articles.each do |article| %>
         <%= link_to article_path(article) do %>
           <div class="card-article card d-flex">
