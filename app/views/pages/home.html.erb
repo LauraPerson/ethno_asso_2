@@ -48,7 +48,7 @@
     <% end %>
   </div>
 
-  <div class="d-flex my-3"><%= image_tag "star.png", width: "60px", height:"60px" %><h1 class="m-3">Conseil d'Administration</h1></div>
+  <div class="d-flex my-3"><%= image_tag "star.png", width: "60px", height:"60px" %><h1 class="m-3">Conseil d'administration</h1></div>
   <div class="my-3"  id="board">
     <% @board.each do |member| %>
       <div class="d-flex flex-column align-items-center">
@@ -99,7 +99,7 @@
       <div class="d-flex align-items-center"><%= image_tag "star.png", width: "60px", height:"60px", class:'mx-2' %><h1 class="">Nos derniers projets</h1></div>
       <div class="article-container my-3">
         <% @last_articles_with_photos.reverse.each do |article| %>
-          <div class="rectangle-card" style="background-image: url('<%= cl_image_path article.photos.first.key, height: 300%>')">
+          <div class="rectangle-card shadow" style="background-image: url('<%= cl_image_path article.photos.first.key, height: 300%>')">
             <p><%= article.title %></p>
             <%= link_to article_path(article) do %>
               <div class="btn-primary my-2" id="read-article">
