@@ -27,7 +27,6 @@
 .banner-center {
   // background-color: white;
   border-radius: 10px;
-  text-align: center;
   background-color: white;
 }
 
@@ -55,7 +54,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-left: 30px;
   width: fit-content;
   // text-align: justify;
   > img {
@@ -64,10 +62,13 @@
 }
 
 .about-text {
-  width: 50%;
+  padding: 10px 30px 30px 30px;
   margin: 30px auto;
 }
+
 #presentation {
+  width: 70vw;
+  margin: 0 auto;
   background-image: url("shape.png");
   background-size: contain;
   background-repeat: no-repeat;
