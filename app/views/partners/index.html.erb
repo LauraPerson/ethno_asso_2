@@ -10,7 +10,9 @@
               <div class="card-partner-img">
                 <%= unique_photo(partner) %>
               </div>
-              <h3><%= partner.name %></h3>
+              <% if partner.name? %>
+                <h3><%= partner.name %></h3>
+              <% end %>
               <div class="d-flex">
                 <% if current_user.super_admin %>
                   <%= button_to( "Supprimer", partner_path(partner), method: :delete, class:"btn-secondary mx-2") %>
