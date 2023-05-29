@@ -16,9 +16,9 @@
           Ajouter un projet
       <% end %>
       <%#  J'ai commenté la ligne car pour l'instant Ethn n'utilise pas les resources %>
-      <%# <%= link_to new_ressource_path, class:"btn-primary m-1" do %> 
-          <%# Ajouter une ressource %>
-      <%# <% end %> 
+      <%= link_to new_ressource_path, class:"btn-primary m-1" do %> 
+            Ajouter une ressource
+      <% end %> 
       <% if @user.super_admin == true %>
         <div class="d-flex m-1">
           <%= link_to new_dashboard_path, class:"btn-primary mx-1" do %>
