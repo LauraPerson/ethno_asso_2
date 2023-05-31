@@ -55,11 +55,13 @@ class ArticlesController < ApplicationController
       flash.alert = "Projet Modifié"
       redirect_to articles_path(@article)
     else
-      flash.alert = "Projet non modifié"
+      flash.alert = "Projet non modifié!"
       redirect_to articles_path
     end
     authorize @article
   end
+
+
 
   def archive
     @article.update(archive: true)
