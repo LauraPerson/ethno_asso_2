@@ -4,7 +4,7 @@
     <div class="d-flex my-3"><%= image_tag "star.png", width: "60px", height:"60px", class:"mx-2" %><h2 class="my-3">Nos partenaires</h2></div>
     <div class="card-grid" id="card-grid-partner">
       <% @partners.each do |partner| %>
-        <% if partner.url %>
+        <% if partner.url == true %>
           <%= link_to partner.url, target: :blank do %>
             <div class="card-partner">
               <div class="card-partner-img">
