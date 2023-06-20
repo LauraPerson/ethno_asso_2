@@ -1,5 +1,7 @@
 class RessourcesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
+  before_action :find_ressource, only: %i[move]
+
 
   
   def index
@@ -65,10 +67,19 @@ class RessourcesController < ApplicationController
     authorize @ressource
   end
 
+  def move
+    @ressource.insert_at(params[:position].to_i)
+    head :ok
+  end 
+
   private 
 
   def ressource_params 
     params.require(:ressource).permit(:title, :content, photos: [])
   end 
+
+  def find_ressource
+    @ressource = Ressource.find(params[:id])
+  end
 
 end
