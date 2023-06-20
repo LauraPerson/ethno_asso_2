@@ -17,7 +17,11 @@ Rails.application.routes.draw do
   
   resources :presentations, only: [:edit, :update]
   resources :partners
-  resources :ressources
+  resources :ressources do 
+    member do 
+      patch 'move'
+    end
+  end
   resources :dashboard, :controller => 'users'
   resources :users, only: [:index, :destroy] do 
     member do 
