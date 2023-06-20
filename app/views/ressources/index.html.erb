@@ -15,9 +15,9 @@
       </div>
     </div>
 
-    <div class="card-grid" id="card-grid-ressource">
-      <% @ressources.each do |r| %>
-        <%= link_to ressource_path(r) do %>
+    <div class="card-grid" id="card-grid-ressource" data-controller="drag" data-drag-url="/ressources/:id/move">
+      <% @ressources.order(position: :desc).each do |r| %>
+        <%= link_to ressource_path(r), data:{id: r.id}  do %>
           <div class="card-ressource card">
             <div class="card-ressource-img">
               <div id="ressource-photo"><%= photo(r) %></div>
