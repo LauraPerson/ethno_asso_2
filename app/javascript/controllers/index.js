@@ -7,6 +7,9 @@ import { application } from "./application"
 import ArchiveController from "./archive_controller.js"
 application.register("archive", ArchiveController)
 
+import DragController from "./drag_controller.js"
+application.register("drag", DragController)
+
 import DropdownController from "./dropdown_controller.js"
 application.register("dropdown", DropdownController)
 

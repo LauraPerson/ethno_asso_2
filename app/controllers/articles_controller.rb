@@ -1,11 +1,11 @@
 class ArticlesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :find_article, only: %i[show archive]
+  before_action :find_article, only: %i[show archive move]
 
 
   def index
     # @unarchived_articles = Article.all.where(archive: false)
-    @articles = Article.order(created_at: :desc)
+    @articles = Article.all
     @unarchived_articles = @articles.where(archive: false)
     @archived_articles = @articles.where(archive: true)
 
@@ -68,6 +68,11 @@ class ArticlesController < ApplicationController
     flash.alert = "Projet archivé"
     redirect_to article_path(@article)
   end
+
+  def move
+    @article.insert_at(params[:position].to_i)
+    head :ok
+  end 
 
 
   def destroy

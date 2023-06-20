@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   resources :articles do 
     member do 
-      patch 'archive'
+      patch 'archive', 'move'
     end
   end
   
