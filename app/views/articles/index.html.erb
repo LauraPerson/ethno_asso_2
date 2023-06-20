@@ -22,7 +22,7 @@
         <% end %>
       </div>
     </div>
-    <div class="card-grid mt-4" id="card-grid-article" data-controller="drag" data-drag-url="/articles/:id/move">
+    <div class="card-grid mt-4" id="card-grid-article" data-controller=" <%= current_user && current_user.admin ? "drag" : "no-drag" %> " data-drag-url="/articles/:id/move">
       <% @filtered_articles.order(position: :asc).each do |article| %>
         <%= link_to article_path(article), data:{id: article.id} do %>
           <div class="card-article card d-flex">
