@@ -5,5 +5,7 @@ class Article < ApplicationRecord
   validates :title, presence: true
   validates :filter, presence: true
 
+  acts_as_list
+
   FILTERS = ["Ethnographie urbaine", "Discriminations", "Écologie"]
 end
