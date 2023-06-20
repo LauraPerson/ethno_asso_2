@@ -23,7 +23,7 @@
       </div>
     </div>
     <div class="card-grid mt-4" id="card-grid-article" data-controller="drag" data-drag-url="/articles/:id/move">
-      <% @filtered_articles.order(position: :desc).each do |article| %>
+      <% @filtered_articles.order(position: :asc).each do |article| %>
         <%= link_to article_path(article), data:{id: article.id} do %>
           <div class="card-article card d-flex">
             <div class="card-article-content justify-content-between">
