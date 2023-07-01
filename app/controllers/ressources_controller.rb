@@ -9,7 +9,7 @@ class RessourcesController < ApplicationController
       sql_query = "title ILIKE :query OR content ILIKE :query"
       @ressources = Ressource.where(sql_query, query: "%#{params[:query]}%")
     else
-      @ressources = Ressource.all.order(created_at: :desc)
+      @ressources = Ressource.all
     end
 
   end
@@ -68,6 +68,8 @@ class RessourcesController < ApplicationController
   end
 
   def move
+    p "TEST"
+    p "#{params[:position].to_i}"
     @ressource.insert_at(params[:position].to_i)
     head :ok
   end 
