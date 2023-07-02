@@ -10,7 +10,11 @@ export default class extends Controller {
     })
   }
   end(event) {
+    console.log(event)
     let id = event.item.dataset.id
+    console.log(id)
+    console.log(this.data.get("url"))
+
     let data = new FormData()
     data.append("position", event.newIndex + 1 )
 
@@ -27,6 +31,7 @@ export default class extends Controller {
       headers: {
         'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
       }
+
     })
       .then(response => {
         // Gérer la réponse si nécessaire

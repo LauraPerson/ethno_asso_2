@@ -20,7 +20,9 @@ end
   article = Article.create!(
     title: "Article#{n}",
     content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident repellat, ratione in sint exercitationem velit dignissimos quas architecto repellendus ab, minus nihil voluptatum excepturi rerum voluptates fuga neque eligendi sed? ",
-    user_id: user.id
+    user_id: user.id, 
+    filter: "Ethnographie urbaine", 
+    position: n + 1
   )
 
   p "Create #{article.id} articles"

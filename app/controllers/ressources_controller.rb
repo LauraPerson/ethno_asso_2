@@ -1,5 +1,7 @@
 class RessourcesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
+  before_action :find_ressource, only: %i[move]
+
 
   
   def index
@@ -7,7 +9,7 @@ class RessourcesController < ApplicationController
       sql_query = "title ILIKE :query OR content ILIKE :query"
       @ressources = Ressource.where(sql_query, query: "%#{params[:query]}%")
     else
-      @ressources = Ressource.all.order(created_at: :desc)
+      @ressources = Ressource.all
     end
 
   end
@@ -65,10 +67,21 @@ class RessourcesController < ApplicationController
     authorize @ressource
   end
 
+  def move
+    p "TEST"
+    p "#{params[:position].to_i}"
+    @ressource.insert_at(params[:position].to_i)
+    head :ok
+  end 
+
   private 
 
   def ressource_params 
     params.require(:ressource).permit(:title, :content, photos: [])
   end 
+
+  def find_ressource
+    @ressource = Ressource.find(params[:id])
+  end
 
 end
