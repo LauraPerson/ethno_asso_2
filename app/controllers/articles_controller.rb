@@ -33,6 +33,8 @@ class ArticlesController < ApplicationController
     @article.user = current_user
     authorize @article
     @article.save 
+    @article.update!(position: @article.id)
+
     flash.alert = "Nouveau projet ajouté"
 
     redirect_to article_path(@article)

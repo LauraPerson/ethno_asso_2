@@ -30,6 +30,7 @@ class RessourcesController < ApplicationController
     @ressource.user = current_user
     authorize @ressource
     @ressource.save 
+    @ressource.update!(position: @ressource.id)
     flash.alert = "Nouvelle ressource ajoutée"
 
     redirect_to ressources_path(@ressource)
