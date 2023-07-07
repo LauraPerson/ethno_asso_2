@@ -26,10 +26,11 @@ class RessourcesController < ApplicationController
   end 
 
   def create
+
     @ressource = Ressource.new(ressource_params)
     @ressource.user = current_user
     authorize @ressource
-    @ressource.save
+    @ressource.save!
     flash.alert = "Nouvelle ressource ajoutée"
 
     redirect_to ressources_path(@ressource)
