@@ -1,7 +1,7 @@
   <div class="footer-container">
     <%= image_tag "logo_text.png" %>
     <div>
-      <div class="d-flex justify-content-end ">
+      <div class="d-flex footer-elements">
         <a href="https://www.instagram.com/ethno_asso/">
           <i class="fa-brands fa-instagram contact-icon mx-2"></i>
         </a>
@@ -9,7 +9,7 @@
           <i class="fa-brands fa-facebook contact-icon mx-2"></i>
         </a>
       </div>
-      <div class="d-flex justify-content-end"><i class="fa-solid fa-phone mx-2 contact-icon"></i><p class="contact-details"><%= Presentation.all[3].content %></p>
+      <div class="d-flex footer-elements"><i class="fa-solid fa-phone mx-2 contact-icon"></i><p class="contact-details"><%= Presentation.all[3].content %></p>
         <% if current_user && current_user.super_admin %>
           <%= link_to edit_presentation_path(Presentation.all[3]) do %>
             <i class="fa-solid fa-pen-to-square mx-3">
@@ -17,7 +17,7 @@
           <% end %>
         <% end %>
       </div>
-      <div class="d-flex justify-content-end"><i class="fa-solid fa-envelope mx-2 contact-icon"></i><p class="contact-details"><%= Presentation.all[2].content %></p>
+      <div class="d-flex footer-elements"><i class="fa-solid fa-envelope mx-2 contact-icon"></i><p class="contact-details"><%= Presentation.all[2].content %></p>
         <% if current_user && current_user.super_admin %>
           <%= link_to edit_presentation_path(Presentation.all[2]) do %>
             <i class="fa-solid fa-pen-to-square mx-3">

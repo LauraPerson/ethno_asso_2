@@ -17,3 +17,35 @@
 .contact-icon {
   font-size: 20px;
 }
+
+.footer-elements {
+  justify-content: flex-end;
+}
+
+
+
+@media (max-width: 1224px) {
+  
+}
+
+@media (max-width: 1024px) {
+
+}
+@media (max-width: 768px) {
+
+}
+
+
+@media (max-width: 480px) {
+  
+  .footer-container {
+    justify-content: center;
+    > img {
+      display: none;
+    }
+  }
+  .footer-elements {
+    justify-content: center;
+  }
+  
+}
