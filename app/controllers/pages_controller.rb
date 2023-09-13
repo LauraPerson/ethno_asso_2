@@ -29,6 +29,7 @@ class PagesController < ApplicationController
 
   def contact
     @contact = Contact.new
-
+    @presentation_email = Presentation.all[2]
+    @presentation_number = Presentation.all[3]
   end
 end
