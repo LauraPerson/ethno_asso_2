@@ -11,7 +11,7 @@
       </div>
       <div class="d-flex justify-content-end"><i class="fa-solid fa-phone mx-2 contact-icon"></i><p class="contact-details"><%= Presentation.all[3].content %></p>
         <% if current_user && current_user.super_admin %>
-          <%= link_to edit_presentation_path(Presentation.all[2]) do %>
+          <%= link_to edit_presentation_path(Presentation.all[3]) do %>
             <i class="fa-solid fa-pen-to-square mx-3">
             </i>
           <% end %>
