@@ -9,8 +9,22 @@
           <i class="fa-brands fa-facebook contact-icon mx-2"></i>
         </a>
       </div>
-      <div class="d-flex justify-content-end "><i class="fa-solid fa-phone mx-2 contact-icon"></i><p class="contact-details">01.53.09.99.54</p></div>
-      <div class="d-flex justify-content-end "><i class="fa-solid fa-envelope mx-2 contact-icon"></i><p class="contact-details">info@ethnoclic.net</p></div>
+      <div class="d-flex justify-content-end"><i class="fa-solid fa-phone mx-2 contact-icon"></i><p class="contact-details"><%= Presentation.all[3].content %></p>
+        <% if current_user && current_user.super_admin %>
+          <%= link_to edit_presentation_path(Presentation.all[2]) do %>
+            <i class="fa-solid fa-pen-to-square mx-3">
+            </i>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="d-flex justify-content-end"><i class="fa-solid fa-envelope mx-2 contact-icon"></i><p class="contact-details"><%= Presentation.all[2].content %></p>
+        <% if current_user && current_user.super_admin %>
+          <%= link_to edit_presentation_path(Presentation.all[2]) do %>
+            <i class="fa-solid fa-pen-to-square mx-3">
+            </i>
+          <% end %>
+        <% end %>
+      </div>
       <p class="contact-details">9 rue Saint-Bruno, 75018 PARIS</p>
     </div>
   </div>
