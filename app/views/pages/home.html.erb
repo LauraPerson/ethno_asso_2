@@ -79,23 +79,13 @@
     </div>
   </div>
 
+
+<div class="container">
+  <div class="d-flex align-items-center"><%= image_tag "star.png", width: "60px", height:"60px", class:'mx-2' %><h1 class="">Nos derniers projets</h1></div>
+</div>
 <div class="bottom-container">
-
-<%# j'ai laissé cette partie afin d'avoir de la matière pour que l'image de background s'affiche bien sur la bannière mais la partie est inutile d'où une opacité à 0, partie à changer avec texte réel %>
-  <div class="banner my-5 empty-banner">
-    <div class="d-flex">
-      <div class="about-text opacity-0 ">
-        <div class="">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mattis eros sed dolor mollis, a ornare nulla molestie. Quisque ac justo orci. Morbi vitae mollis tellus, et fringilla dolor. In pellentesque quis leo quis tincidunt. Nunc vel elementum turpis. Maecenas fringilla lobortis erat, ut ultrices ante maximus quis. Nam orci risus, efficitur ac tristique et, imperdiet quis erat. Sed interdum purus vel turpis mollis.
-        </div>
-      </div>
-    </div>
-  </div>
-<%# jusqu'ici %>
-
   <div class="banner banner-bottom py-3">
     <div class="container" id="container-article-title">
-      <div class="d-flex align-items-center"><%= image_tag "star.png", width: "60px", height:"60px", class:'mx-2' %><h1 class="">Nos derniers projets</h1></div>
       <div class="article-container my-3">
         <% @last_articles_with_photos.reverse.each do |article| %>
           <div class="rectangle-card shadow" style="background-image: url('<%= cl_image_path article.photos.first.key, height: 300%>')">
@@ -110,5 +100,8 @@
       </div>
     </div>
   </div>
+</div>
+<div class="bottom-banner">
+  <%= image_tag "frise_transp.png" %> 
 </div>
 </div>
