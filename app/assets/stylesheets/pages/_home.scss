@@ -32,10 +32,17 @@
 
 
 .bottom-container {
-  background-image: url('frise_transp.png');
-  background-size: cover;
-  background-repeat: no-repeat;
+
   width: 100vw;
+}
+
+.bottom-banner {
+  object-fit: contain;
+  width: 100vw;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
 }
 
 #container-article-title {
