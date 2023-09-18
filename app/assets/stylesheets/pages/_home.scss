@@ -25,8 +25,8 @@
 }
 
 .img-xs {
-  height: 100%;
-  object-fit: contain;
+  display: none;
+
 }
 
 .banner-center {
@@ -118,7 +118,9 @@
 
 
 @media (max-width: 1224px) {
-  
+  .img-xs {
+    display: none;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -132,6 +134,9 @@
     a {
       font-size: 12px;
     }
+  }
+  .img-xs {
+    display: none;
   }
 }
 @media (max-width: 768px) {
@@ -162,6 +167,11 @@
 
 
 @media (max-width: 480px) {
+  .img-xs {
+    display: block;
+    height: 100%;
+    object-fit: contain;
+  }
   .banner-top {
     background-size: cover;
   }
