@@ -14,11 +14,11 @@ class UserPolicy < ApplicationPolicy
   end
 
   def edit?
-    user == user
+    true
   end
 
   def update?
-    user == user
+    true
   end
 
   def create?
